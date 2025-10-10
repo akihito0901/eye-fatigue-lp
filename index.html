@@ -60,12 +60,11 @@
             height: 85vh;
             object-fit: cover;
             display: block;
-            margin: 0 0 30px 0;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
+            margin: 0;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            right: 0;
         }
         
         .hero-content {
@@ -79,6 +78,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            z-index: 10;
+            margin-top: calc(85vh + 40px);
         }
         
         .hero h1 {
@@ -545,9 +546,9 @@
 
     <!-- ヒーローセクション -->
     <section class="hero">
+        <img src="hero-image.png" alt="眼精疲労治療" class="hero-image">
+        
         <div class="hero-content">
-            <img src="hero-image.png" alt="眼精疲労治療" class="hero-image">
-            
             <h1>その頭痛と目の重さ<br>もう限界じゃないですか？</h1>
             
             <div class="hero-video">
@@ -557,40 +558,9 @@
                 </video>
             </div>
             
-            <div class="cta-section">
-                <span class="original-price">通常 16,000円</span>
-                <div class="price-display">初回 8,000円</div>
-                <a href="tel:070-5530-6656" class="cta-button">
-                    <img src="cta-button.png" alt="今すぐ予約する">
-                </a>
-                <div class="urgency-banner">
-                    🔥 1日2名限定！予約困難メニューが今月のみ解放中
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- ベネフィット -->
-    <section class="benefits">
-        <h2>こんな効果が期待できます</h2>
-        <div class="benefits-grid">
-            <div class="benefit-item">
-                <span class="benefit-icon">⚡</span>
-                <h3>即効性</h3>
-                <p>10年間悩んでいた頭痛がたった1回で改善</p>
-            </div>
-            <div class="benefit-item">
-                <span class="benefit-icon">😴</span>
-                <h3>深いリラックス</h3>
-                <p>施術中に眠ってしまうほどの究極のリラクゼーション</p>
-            </div>
-            <div class="benefit-item">
-                <span class="benefit-icon">✨</span>
-                <h3>美容効果</h3>
-                <p>顔のむくみ・バランスまで整う特別調整</p>
-            </div>
-        </div>
-    </section>
 
     <!-- 問題提起セクション -->
     <section class="problem-section">
@@ -621,41 +591,11 @@
                 </div>
             </div>
             
-            <div class="impact-section">
-                <div class="impact-item">
-                    <h3>身体への影響</h3>
-                    <ul>
-                        <li><strong>慢性頭痛</strong><br>目の奥の緊張が三叉神経を刺激し、激しい頭痛を引き起こす</li>
-                        <li><strong>首肩の激痛</strong><br>無意識の緊張により筋肉が硬直、姿勢が悪化し続ける</li>
-                    </ul>
-                </div>
-                
-                <div class="impact-item">
-                    <h3>精神・神経への影響</h3>
-                    <ul>
-                        <li><strong>集中力・記憶力の著しい低下</strong><br>脳の疲労により仕事や学習の効率が激減</li>
-                        <li><strong>重度の不眠症</strong><br>交感神経の異常により睡眠の質が極端に悪化</li>
-                    </ul>
-                </div>
-                
-                <div class="impact-item">
-                    <h3>生活の質への深刻な影響</h3>
-                    <ul>
-                        <li><strong>仕事・学習能力の完全停止</strong><br>集中が続かず生産性が限界まで低下</li>
-                        <li><strong>慢性疲労症候群</strong><br>睡眠・頭痛・肩こりの悪循環で常に疲労困憊状態</li>
-                    </ul>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- 解決策セクション -->
     <section class="solution-section">
-        <div class="solution-highlight">
-            <h2>当院がその問題を完全解決</h2>
-            <p>「目と頭の重さがスッと消える」</p>
-            <p style="color: #ffeb3b;">施術中に睡眠に陥る方続出中！</p>
-        </div>
         
         <h3 class="section-title" style="color: white; font-size: 2.5rem;">5段階専門施術プロセス</h3>
         
