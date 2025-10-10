@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>その頭痛と目の重さ、もう限界じゃないですか？｜眼精疲労専門治療院</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'ヒラギノ角ゴシック', 'Yu Gothic Medium', 'メイリオ', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ヘッダー - Attention */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .hero-stats {
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            font-weight: bold;
+        }
+        
+        .hero-stats .number {
+            font-size: 2rem;
+            color: #e74c3c;
+        }
+        
+        .benefits-list {
+            text-align: left;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .benefits-list li {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+        
+        .price-highlight {
+            background: #e74c3c;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        .limited-offer {
+            background: #f39c12;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        /* 問題提起セクション - Interest */
+        .problem-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+        }
+        
+        .impact-section {
+            margin: 50px 0;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .impact-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .impact-card h3 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .impact-card ul {
+            list-style: none;
+        }
+        
+        .impact-card li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .impact-card li::before {
+            content: "▶";
+            color: #e74c3c;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* 解決策セクション - Desire */
+        .solution-section {
+            padding: 60px 0;
+            background: white;
+        }
+        
+        .solution-highlight {
+            text-align: center;
+            margin: 40px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .solution-highlight h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .solution-highlight p {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        .treatment-steps {
+            margin: 50px 0;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .guarantee {
+            background: #e8f5e8;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 40px 0;
+            border: 2px solid #27ae60;
+        }
+        
+        .guarantee h3 {
+            color: #27ae60;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* 差別化セクション - Memory */
+        .differentiation-section {
+            padding: 60px 0;
+            background: #2c3e50;
+            color: white;
+        }
+        
+        .differentiation-section .section-title {
+            color: white;
+        }
+        
+        .comparison {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .comparison h3 {
+            color: #f39c12;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* CTA セクション - Action */
+        .cta-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .offer-box {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+        
+        .special-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #f39c12;
+            margin: 15px 0;
+        }
+        
+        .cta-button {
+            background: #f39c12;
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 0;
+            display: inline-block;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .urgency {
+            background: #f39c12;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        /* 動画セクション用スタイル */
+        .video-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .video-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .video-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .video-title {
+            background: white;
+            color: #2c3e50;
+            padding: 20px;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        .video-embed {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        
+        .video-description {
+            background: white;
+            color: #666;
+            padding: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin: 0 0 20px 0;
+            }
+            
+            .special-price {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー - Attention -->
+    <section class="hero">
+        <div class="container">
+            <h1>その頭痛と目の重さ、<br>もう限界じゃないですか？</h1>
+            
+            <div class="hero-stats">
+                <p>厚生労働省の調べでは</p>
+                <p>デスクワーク作業者の<span class="number">91%</span>が<br>「目の疲れ、痛み」を感じています</p>
+                <p style="margin-top: 15px;">福岡県だけでも<span class="number">232万人</span>が眼精疲労に悩んでいます</p>
+            </div>
+            
+            <ul class="benefits-list">
+                <li>✓ デスクワークで蓄積した眼精疲労・肩こり・不眠を根本から改善</li>
+                <li>✓ 施術中に眠ってしまうほどの深いリラックス</li>
+                <li>✓ 顔のむくみ・バランスまで整う特別調整</li>
+            </ul>
+            
+            <div class="price-highlight">
+                今だけ、通常16,000円 → <strong>初回 8,000円</strong>
+            </div>
+            
+            <div class="limited-offer">
+                予約困難の人気メニューが1日2名限定で解放中！
+            </div>
+        </div>
+    </section>
+
+    <!-- 導入動画セクション -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title">なぜこんなに多くの人が悩んでいるのか？</h2>
+            <div class="video-container">
+                <div class="video-title">眼精疲労の真実と解決法</div>
+                <div class="video-placeholder">
+                    <!-- 動画準備中 -->
+                    📹 動画準備中<br>
+                    <small style="font-size: 1rem;">デスクワークと眼精疲労の関係性について詳しく解説します</small>
+                </div>
+                <!-- 動画が準備できたら以下のコードに置き換え
+                <iframe class="video-embed" src="YOUR_VIDEO_URL" allowfullscreen></iframe>
+                -->
+                <div class="video-description">
+                    この動画では、なぜ現代人の91%が目の疲れに悩まされているのか、その根本原因と当院独自の解決法について詳しく解説しています。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 問題提起セクション - Interest -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">日本全国でこんなに多くの人が悩んでいます</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">5,600万人</span>
+                    <p>目の疲れを感じている人</p>
+                    <small>（デスクワーク作業者の91%）</small>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">4,100万人</span>
+                    <p>頭痛に悩む人</p>
+                    <small>（3人に1人の割合）</small>
+                </div>
+            </div>
+            
+            <div class="impact-section">
+                <h3 class="section-title">目の疲れはこんな影響を与えています</h3>
+                
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <h3>身体への影響</h3>
+                        <ul>
+                            <li><strong>頭痛</strong><br>目の奥の緊張が三叉神経を刺激し、頭痛につながる</li>
+                            <li><strong>首肩のこり</strong><br>目を酷使すると、無意識に肩や首は緊張。姿勢の悪化</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <h3>精神・神経への影響</h3>
+                        <ul>
+                            <li><strong>集中力、記憶力の低下</strong><br>視覚情報の処理に脳が疲れ、作業効率が落ちる</li>
+                            <li><strong>不眠</strong><br>交感神経が優位に働き、寝つきが悪くなり朝がつらくなる</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <h3>生活の質への影響</h3>
+                        <ul>
+                            <li><strong>仕事・学習の能率低下</strong><br>PCやスマホ作業の集中が続かず生産性が下がる</li>
+                            <li><strong>慢性疲労感</strong><br>睡眠不足、頭痛、肩こりの連鎖により常に疲れている状態</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 症状説明動画セクション -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title">あなたの症状、当てはまりませんか？</h2>
+            <div class="video-container">
+                <div class="video-title">眼精疲労が引き起こす症状チェック</div>
+                <div class="video-placeholder">
+                    <!-- 動画準備中 -->
+                    📹 動画準備中<br>
+                    <small style="font-size: 1rem;">頭痛・肩こり・不眠などの症状について解説します</small>
+                </div>
+                <!-- 動画が準備できたら以下のコードに置き換え
+                <iframe class="video-embed" src="YOUR_VIDEO_URL" allowfullscreen></iframe>
+                -->
+                <div class="video-description">
+                    実際の患者様の症状例と、それがどのように日常生活に影響を与えているかを具体的に説明しています。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 解決策セクション - Desire -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-highlight">
+                <h2>当院がその問題を解決</h2>
+                <p>「目と頭の重さがスッと消える」</p>
+                <p>頭とお顔のバランス調整！</p>
+                <p style="color: #f39c12; font-size: 1.5rem; margin-top: 20px;">施術中に睡眠に陥る方続出中！！！</p>
+            </div>
+            
+            <h3 class="section-title">どんなことをするの？</h3>
+            
+            <div class="treatment-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>首肩回りの筋肉調整</h3>
+                        <p>首コリ、肩こりの緩和。血流の流れが良くなります。</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>目の周囲の筋肉調整</h3>
+                        <p>眼精疲労の緩和、頭痛の緩和に繋がります。</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>骨格矯正</h3>
+                        <p>食いしばりや顔のバランスを整え、顔のむくみを改善</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>頭蓋骨調整</h3>
+                        <p>がちがちに固まった頭の緊張を取り除きます。</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>自律神経を整える</h3>
+                        <p>微弱電流という特殊な電気で自律神経を整えます！</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="guarantee">
+                <h3>上記のすべてを60分みっちり行います！</h3>
+                <p>一般的な30分の施術とは違い、根本的な改善を目指します</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 施術動画セクション -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title">実際の施術の様子をご覧ください</h2>
+            <div class="video-container">
+                <div class="video-title">5段階の専門施術プロセス</div>
+                <div class="video-placeholder">
+                    <!-- 動画準備中 -->
+                    📹 動画準備中<br>
+                    <small style="font-size: 1rem;">60分の施術内容を詳しくご紹介します</small>
+                </div>
+                <!-- 動画が準備できたら以下のコードに置き換え
+                <iframe class="video-embed" src="YOUR_VIDEO_URL" allowfullscreen></iframe>
+                -->
+                <div class="video-description">
+                    頭蓋骨調整から自律神経調整まで、当院独自の5段階施術プロセスを実際の施術シーンと共にご紹介します。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 差別化セクション - Memory -->
+    <section class="differentiation-section">
+        <div class="container">
+            <h2 class="section-title">なぜ当院が選ばれるのか？</h2>
+            
+            <div class="comparison">
+                <h3>他院との違い</h3>
+                <p>ヘッドスパやサロンなどいろんなところに行っても効果がいまいちだった方は、ぜひ技術にこだわる当院の体験をぜひ受けてみてください。</p>
+                <br>
+                <p>一般的なリラクゼーションとは違い、<strong>根本原因にアプローチ</strong>する専門技術で、長年の悩みを解決します。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- お客様の声動画セクション -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title">実際に改善されたお客様の声</h2>
+            <div class="video-container">
+                <div class="video-title">患者様インタビュー</div>
+                <div class="video-placeholder">
+                    <!-- 動画準備中 -->
+                    📹 動画準備中<br>
+                    <small style="font-size: 1rem;">長年の悩みが解決した患者様の体験談をお聞きください</small>
+                </div>
+                <!-- 動画が準備できたら以下のコードに置き換え
+                <iframe class="video-embed" src="YOUR_VIDEO_URL" allowfullscreen></iframe>
+                -->
+                <div class="video-description">
+                    「10年間悩んでいた頭痛が改善した」「仕事の集中力が戻った」など、実際の患者様の生の声をお聞きいただけます。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTAセクション - Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title">今すぐ予約して、その辛さから解放されませんか？</h2>
+            
+            <div class="offer-box">
+                <p class="original-price">通常料金 16,000円</p>
+                <p class="special-price">初回限定 8,000円</p>
+                <p style="font-size: 1.3rem; margin: 20px 0;">50%OFF!</p>
+                
+                <a href="tel:092-xxx-xxxx" class="cta-button">
+                    今すぐ電話で予約する<br>
+                    <small style="font-size: 1rem;">092-XXX-XXXX</small>
+                </a>
+                
+                <div class="urgency">
+                    ⚠️ 予約困難1ヶ月待ちのメニューが今月から1日2名限定で取れます！
+                </div>
+                
+                <p style="font-size: 1.2rem; margin-top: 20px;">
+                    「頭痛と目の疲れを今すぐ何とかしたい」<br>
+                    と電話でお伝えください
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
