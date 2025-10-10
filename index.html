@@ -19,36 +19,64 @@
             overflow-x: hidden;
         }
         
+        /* ヘッダー */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 35, 126, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .header-logo {
+            height: 50px;
+            width: auto;
+        }
+        
         /* ヒーローセクション */
         .hero {
             position: relative;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: url('hero-image.png') center/cover no-repeat;
-            background-attachment: fixed;
+            padding-top: 80px;
+            background: linear-gradient(135deg, #1a237e 0%, #000051 50%, #000000 100%);
             overflow: hidden;
         }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(26, 35, 126, 0.85) 0%, rgba(0, 0, 81, 0.8) 50%, rgba(0, 0, 0, 0.9) 100%);
-            z-index: 1;
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+            margin: 0 auto 40px auto;
+            display: block;
         }
         
         .hero-content {
             position: relative;
-            z-index: 2;
             text-align: center;
             max-width: 900px;
             padding: 40px 20px;
             width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 80px);
         }
         
         .hero h1 {
@@ -132,22 +160,24 @@
         }
         
         .cta-button {
-            background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%);
-            color: #000;
-            padding: 20px 50px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
             display: inline-block;
             margin: 20px 0;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
+            border: none;
+            background: none;
+            cursor: pointer;
+            text-decoration: none;
         }
         
-        .cta-button:hover {
+        .cta-button img {
+            width: auto;
+            height: 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cta-button:hover img {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(255, 193, 7, 0.6);
         }
@@ -647,6 +677,8 @@
         <div class="hero-content">
             <h1>その頭痛と目の重さ<br>もう限界じゃないですか？</h1>
             
+            <img src="hero-image.png" alt="眼精疲労治療" class="hero-image">
+            
             <div class="hero-video">
                 <video autoplay muted loop playsinline preload="metadata">
                     <source src="最後のCTAの近ちく.mov" type="video/quicktime">
@@ -675,7 +707,9 @@
             <div class="cta-section">
                 <span class="original-price">通常 16,000円</span>
                 <div class="price-display">初回 8,000円</div>
-                <a href="tel:092-xxx-xxxx" class="cta-button">今すぐ予約する</a>
+                <a href="tel:070-5530-6656" class="cta-button">
+                    <img src="cta-button.png" alt="今すぐ予約する">
+                </a>
                 <div class="urgency-banner">
                     🔥 1日2名限定！予約困難メニューが今月のみ解放中
                 </div>
@@ -838,11 +872,25 @@
                     <div class="price-display" style="color: #ffeb3b;">初回限定 8,000円</div>
                     <p style="font-size: 1.5rem; margin: 20px 0; color: #ff4081;">50% OFF!</p>
                     
-                    <a href="tel:092-xxx-xxxx" class="cta-button" style="font-size: 1.5rem; padding: 25px 60px;">
-                        今すぐ電話で予約する
+                    <a href="tel:070-5530-6656" class="cta-button" style="margin: 30px 0;">
+                        <img src="cta-button.png" alt="今すぐ電話で予約する" style="height: 80px;">
                     </a>
                     
-                    <div class="phone-number">092-XXX-XXXX</div>
+                    <div class="phone-number">070-5530-6656</div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 25px; border-radius: 15px; margin: 30px 0; backdrop-filter: blur(10px);">
+                        <h4 style="color: #ffeb3b; margin-bottom: 15px; font-size: 1.3rem;">店舗情報</h4>
+                        <p style="margin: 10px 0; font-size: 1.1rem;">
+                            <strong>所在地：</strong><br>
+                            〒812-0878 福岡県福岡市博多区竹丘町２丁目４−１８
+                        </p>
+                        <p style="margin: 10px 0; font-size: 1.1rem;">
+                            <strong>電話番号：</strong> 070-5530-6656
+                        </p>
+                        <p style="margin: 10px 0; font-size: 1.1rem;">
+                            <strong>営業時間：</strong> 日祝休み、土曜は午前のみ
+                        </p>
+                    </div>
                     
                     <div class="urgency-banner">
                         ⚠️ 予約困難1ヶ月待ちのメニューが今月のみ1日2名限定で解放中！
@@ -884,5 +932,44 @@
             video.preload = 'metadata';
         });
     </script>
+
+    <!-- ヘッダー -->
+    <div class="header">
+        <div class="header-content">
+            <img src="logo.png" alt="桜並木駅前の整骨院" class="header-logo">
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer style="background: linear-gradient(135deg, #1a237e 0%, #000051 100%); padding: 40px 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="container">
+            <img src="logo.png" alt="桜並木駅前の整骨院" style="height: 60px; margin-bottom: 20px;">
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); margin: 20px 0;">
+                <h4 style="color: #ffeb3b; margin-bottom: 20px; font-size: 1.4rem;">桜並木駅前の整骨院</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                    <div>
+                        <p style="margin: 8px 0; font-size: 1rem;">
+                            <strong style="color: #64b5f6;">所在地：</strong><br>
+                            〒812-0878<br>
+                            福岡県福岡市博多区竹丘町２丁目４−１８
+                        </p>
+                    </div>
+                    <div>
+                        <p style="margin: 8px 0; font-size: 1rem;">
+                            <strong style="color: #64b5f6;">電話番号：</strong><br>
+                            <a href="tel:070-5530-6656" style="color: #ffeb3b; text-decoration: none; font-size: 1.2rem; font-weight: bold;">070-5530-6656</a>
+                        </p>
+                        <p style="margin: 8px 0; font-size: 1rem;">
+                            <strong style="color: #64b5f6;">営業時間：</strong><br>
+                            日祝休み、土曜は午前のみ
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 30px; opacity: 0.7; font-size: 0.9rem;">
+                &copy; 2025 桜並木駅前の整骨院. All rights reserved.
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
