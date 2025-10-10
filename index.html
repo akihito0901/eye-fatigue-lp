@@ -56,19 +56,22 @@
         }
         
         .hero-image {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
-            margin: 0 auto 40px auto;
+            width: 100vw;
+            height: 70vh;
+            object-fit: cover;
             display: block;
+            margin: 0 0 40px 0;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
         }
         
         .hero-content {
             position: relative;
             text-align: center;
-            max-width: 900px;
+            max-width: 1200px;
             padding: 40px 20px;
             width: 100%;
             margin: 0 auto;
@@ -76,7 +79,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: calc(100vh - 80px);
         }
         
         .hero h1 {
@@ -109,59 +111,77 @@
             border-radius: 20px;
         }
         
+        /* ベネフィット */
         .benefits {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 50px 0;
-        }
-        
-        .benefit-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 80px 20px;
+            margin: 0;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(100, 181, 246, 0.3);
+        .benefits h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #ffffff 0%, #64b5f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .benefit-item {
+            text-align: center;
         }
         
         .benefit-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 4rem;
+            margin-bottom: 25px;
             display: block;
         }
         
+        .benefit-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #64b5f6;
+            font-weight: 700;
+        }
+        
+        .benefit-item p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        /* CTA */
         .cta-section {
             background: linear-gradient(135deg, #ff4081 0%, #e91e63 100%);
-            padding: 40px 20px;
-            border-radius: 20px;
-            margin: 40px 0;
+            padding: 60px 20px;
+            margin: 0;
             text-align: center;
-            box-shadow: 0 15px 40px rgba(255, 64, 129, 0.4);
         }
         
         .price-display {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 900;
-            margin: 20px 0;
+            margin: 30px 0;
         }
         
         .original-price {
             text-decoration: line-through;
             opacity: 0.7;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             display: block;
         }
         
         .cta-button {
             display: inline-block;
-            margin: 20px 0;
+            margin: 30px 0;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: none;
             background: none;
@@ -171,27 +191,40 @@
         
         .cta-button img {
             width: auto;
-            height: 60px;
+            height: 80px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
+            box-shadow: 0 15px 40px rgba(255, 193, 7, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .cta-button:hover img {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 193, 7, 0.6);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 193, 7, 0.6);
         }
         
-        /* セクション共通スタイル */
+        .urgency-banner {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            color: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            font-weight: bold;
+            font-size: 1.3rem;
+            animation: pulse 2s infinite;
+            box-shadow: 0 10px 30px rgba(255, 152, 0, 0.4);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        /* セクション共通 */
         .section {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .container {
+            padding: 100px 20px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
         
         .section-title {
@@ -208,16 +241,19 @@
         /* 問題セクション */
         .problem-section {
             background: linear-gradient(135deg, #263238 0%, #37474f 100%);
-            position: relative;
+            padding: 100px 0;
         }
         
         .problem-video {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 800px;
+            margin: 60px auto;
+            text-align: center;
+        }
+        
+        .problem-video h3 {
+            font-size: 1.8rem;
+            color: #64b5f6;
+            margin-bottom: 30px;
         }
         
         .problem-video video {
@@ -226,135 +262,125 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
         
-        .stats-grid {
+        .stats-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 60px;
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
         }
         
-        .stat-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 40px;
+        .stat-item {
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-5px);
+            padding: 40px 20px;
         }
         
         .stat-number {
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-weight: 900;
             color: #ff4081;
             display: block;
+            margin-bottom: 20px;
+        }
+        
+        .stat-item h3 {
+            font-size: 1.5rem;
             margin-bottom: 15px;
+            color: #64b5f6;
+        }
+        
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
         
         /* 影響セクション */
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
+        .impact-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
         }
         
-        .impact-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(100, 181, 246, 0.1) 100%);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 40px;
-            border-left: 5px solid #64b5f6;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .impact-item {
+            padding: 60px 20px;
+            border-left: 6px solid #64b5f6;
+            margin: 40px 0;
         }
         
-        .impact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(100, 181, 246, 0.2);
-        }
-        
-        .impact-card h3 {
+        .impact-item h3 {
             color: #64b5f6;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
             font-weight: 700;
         }
         
-        .impact-card ul {
+        .impact-item ul {
             list-style: none;
         }
         
-        .impact-card li {
-            margin: 15px 0;
-            padding-left: 25px;
+        .impact-item li {
+            margin: 25px 0;
+            padding-left: 35px;
             position: relative;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
+            line-height: 1.8;
         }
         
-        .impact-card li::before {
+        .impact-item li::before {
             content: "▶";
             color: #ff4081;
             position: absolute;
             left: 0;
             font-weight: bold;
+            font-size: 1.3rem;
         }
         
         /* 解決策セクション */
         .solution-section {
             background: linear-gradient(135deg, #1a237e 0%, #000051 100%);
-            position: relative;
+            padding: 100px 0;
         }
         
         .solution-highlight {
             text-align: center;
-            margin: 60px 0;
-            padding: 60px 40px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 60px auto;
+            padding: 80px 40px;
+            max-width: 1000px;
         }
         
         .solution-highlight h2 {
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-size: clamp(2.5rem, 4vw, 4rem);
             font-weight: 900;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
+        .solution-highlight p {
+            font-size: 1.6rem;
+            margin: 25px 0;
+        }
+        
         .treatment-videos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin: 80px 0;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 60px;
+            max-width: 1400px;
+            margin: 100px auto;
+            padding: 0 20px;
         }
         
         .treatment-video {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .treatment-video:hover {
-            transform: translateY(-8px);
+            text-align: center;
         }
         
         .treatment-video h3 {
             color: #64b5f6;
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
             font-weight: 700;
         }
         
@@ -366,22 +392,25 @@
         }
         
         .video-description {
-            font-size: 1rem;
+            font-size: 1.1rem;
             opacity: 0.9;
-            line-height: 1.6;
+            line-height: 1.8;
         }
         
         /* 自律神経セクション */
         .autonomic-section {
             background: linear-gradient(135deg, #37474f 0%, #263238 100%);
+            padding: 100px 0;
             text-align: center;
         }
         
         .autonomic-images {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
         }
         
         .autonomic-images img {
@@ -392,29 +421,19 @@
         }
         
         .autonomic-images img:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
         
-        /* CTA最終セクション */
+        /* 最終CTA */
         .final-cta {
             background: linear-gradient(135deg, #000051 0%, #1a237e 50%, #ff4081 100%);
+            padding: 100px 0;
             text-align: center;
-            position: relative;
-        }
-        
-        .final-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, rgba(255, 64, 129, 0.2) 0%, transparent 70%);
         }
         
         .testimonial-video {
-            max-width: 600px;
-            margin: 40px auto;
+            max-width: 700px;
+            margin: 60px auto;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
@@ -424,284 +443,106 @@
             width: 100%;
         }
         
-        .urgency-banner {
-            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
-            color: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            margin: 30px 0;
-            font-weight: bold;
-            font-size: 1.2rem;
-            animation: pulse 2s infinite;
-            box-shadow: 0 10px 30px rgba(255, 152, 0, 0.4);
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
-        
         .contact-info {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 60px 40px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
+            border-radius: 25px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .phone-number {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 900;
             color: #ffeb3b;
-            margin: 20px 0;
+            margin: 30px 0;
+        }
+        
+        .store-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .store-info h4 {
+            color: #ffeb3b;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .store-info p {
+            margin: 15px 0;
+            font-size: 1.2rem;
         }
         
         /* レスポンシブ */
-        @media (max-width: 1024px) {
-            .hero {
-                background-attachment: scroll;
-            }
-            
-            .hero h1 {
-                font-size: clamp(2rem, 6vw, 3.5rem);
-            }
-            
-            .benefits {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 15px;
-            }
-            
-            .treatment-videos {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 30px;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-            
-            .impact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
         @media (max-width: 768px) {
-            .hero {
-                min-height: 100vh;
-                background-attachment: scroll;
-                padding: 0;
+            .header-logo {
+                height: 40px;
             }
             
-            .hero-content {
-                padding: 20px 15px;
-                max-width: 100%;
+            .hero-image {
+                height: 50vh;
             }
             
-            .hero h1 {
-                font-size: clamp(1.8rem, 8vw, 2.5rem);
-                margin-bottom: 20px;
-                line-height: 1.1;
-            }
-            
-            .hero-video {
-                margin: 25px 0;
-                max-width: 100%;
-            }
-            
-            .benefits {
+            .benefits-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
-                margin: 30px 0;
-            }
-            
-            .benefit-card {
-                padding: 20px 15px;
-            }
-            
-            .benefit-icon {
-                font-size: 2rem;
-                margin-bottom: 10px;
-            }
-            
-            .cta-section {
-                padding: 30px 15px;
-                margin: 30px 0;
-            }
-            
-            .price-display {
-                font-size: 2.5rem;
-            }
-            
-            .cta-button {
-                padding: 18px 40px;
-                font-size: 1.1rem;
-                margin: 15px 0;
-            }
-            
-            .urgency-banner {
-                font-size: 1rem;
-                padding: 15px;
-            }
-            
-            .section {
-                padding: 60px 0;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
-            
-            .section-title {
-                font-size: clamp(1.5rem, 6vw, 2.5rem);
-                margin-bottom: 40px;
+                gap: 40px;
             }
             
             .treatment-videos {
                 grid-template-columns: 1fr;
-                gap: 25px;
-                margin: 50px 0;
+                gap: 40px;
             }
             
-            .treatment-video {
-                padding: 20px;
-            }
-            
-            .stats-grid {
+            .stats-section {
                 grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .stat-number {
-                font-size: 3rem;
-            }
-            
-            .impact-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .impact-card {
-                padding: 25px 20px;
+                gap: 40px;
             }
             
             .autonomic-images {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 30px;
             }
             
             .phone-number {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
             
-            .contact-info {
-                padding: 25px 15px;
+            .cta-button img {
+                height: 60px;
             }
             
-            .solution-highlight {
-                padding: 40px 20px;
+            .contact-info, .store-info {
+                padding: 30px 20px;
             }
-            
-            .problem-video {
-                padding: 25px 15px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: clamp(1.5rem, 9vw, 2rem);
-                letter-spacing: -0.01em;
-            }
-            
-            .hero-video {
-                margin: 20px 0;
-            }
-            
-            .benefit-card {
-                padding: 15px;
-            }
-            
-            .benefit-icon {
-                font-size: 1.8rem;
-            }
-            
-            .price-display {
-                font-size: 2rem;
-            }
-            
-            .cta-button {
-                padding: 15px 30px;
-                font-size: 1rem;
-            }
-            
-            .section {
-                padding: 40px 0;
-            }
-            
-            .section-title {
-                font-size: clamp(1.3rem, 8vw, 2rem);
-                margin-bottom: 30px;
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
-            }
-            
-            .phone-number {
-                font-size: 1.5rem;
-            }
-            
-            .urgency-banner {
-                font-size: 0.9rem;
-                padding: 12px;
-            }
-        }
-        
-        /* スクロールアニメーション */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
 <body>
+    <!-- ヘッダー -->
+    <div class="header">
+        <div class="header-content">
+            <img src="logo.png" alt="桜並木駅前の整骨院" class="header-logo">
+        </div>
+    </div>
+
     <!-- ヒーローセクション -->
     <section class="hero">
         <div class="hero-content">
-            <h1>その頭痛と目の重さ<br>もう限界じゃないですか？</h1>
-            
             <img src="hero-image.png" alt="眼精疲労治療" class="hero-image">
+            
+            <h1>その頭痛と目の重さ<br>もう限界じゃないですか？</h1>
             
             <div class="hero-video">
                 <video autoplay muted loop playsinline preload="metadata">
                     <source src="最後のCTAの近ちく.mov" type="video/quicktime">
                     <source src="最後のCTAの近ちく.mov" type="video/mp4">
                 </video>
-            </div>
-            
-            <div class="benefits">
-                <div class="benefit-card">
-                    <span class="benefit-icon">⚡</span>
-                    <h3>即効性</h3>
-                    <p>10年間悩んでいた頭痛が<br>たった1回で改善</p>
-                </div>
-                <div class="benefit-card">
-                    <span class="benefit-icon">😴</span>
-                    <h3>深いリラックス</h3>
-                    <p>施術中に眠ってしまうほどの<br>究極のリラクゼーション</p>
-                </div>
-                <div class="benefit-card">
-                    <span class="benefit-icon">✨</span>
-                    <h3>美容効果</h3>
-                    <p>顔のむくみ・バランスまで<br>整う特別調整</p>
-                </div>
             </div>
             
             <div class="cta-section">
@@ -717,37 +558,59 @@
         </div>
     </section>
 
+    <!-- ベネフィット -->
+    <section class="benefits">
+        <h2>こんな効果が期待できます</h2>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <span class="benefit-icon">⚡</span>
+                <h3>即効性</h3>
+                <p>10年間悩んでいた頭痛がたった1回で改善</p>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">😴</span>
+                <h3>深いリラックス</h3>
+                <p>施術中に眠ってしまうほどの究極のリラクゼーション</p>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">✨</span>
+                <h3>美容効果</h3>
+                <p>顔のむくみ・バランスまで整う特別調整</p>
+            </div>
+        </div>
+    </section>
+
     <!-- 問題提起セクション -->
-    <section class="section problem-section">
-        <div class="container">
+    <section class="problem-section">
+        <div class="section">
             <h2 class="section-title">あなたもこんな症状で苦しんでいませんか？</h2>
             
             <div class="problem-video">
-                <h3 style="text-align: center; margin-bottom: 30px; font-size: 1.5rem; color: #64b5f6;">症状チェック - 当てはまる項目はありませんか？</h3>
+                <h3>症状チェック - 当てはまる項目はありませんか？</h3>
                 <video autoplay muted loop playsinline preload="metadata">
                     <source src="①頭蓋骨.mov" type="video/quicktime">
                     <source src="①頭蓋骨.mov" type="video/mp4">
                 </video>
-                <p style="margin-top: 20px; text-align: center; font-size: 1.1rem;">
+                <p style="margin-top: 30px; font-size: 1.3rem;">
                     頭痛、肩こり、目の疲れ…これらの症状が日常的に続いている方は、ぜひこの動画をご覧ください。
                 </p>
             </div>
             
-            <div class="stats-grid">
-                <div class="stat-card">
+            <div class="stats-section">
+                <div class="stat-item">
                     <span class="stat-number">5,600万人</span>
                     <h3>目の疲れを感じている人</h3>
                     <p>デスクワーク作業者の91%が眼精疲労に悩んでいます</p>
                 </div>
-                <div class="stat-card">
+                <div class="stat-item">
                     <span class="stat-number">4,100万人</span>
                     <h3>慢性頭痛に悩む人</h3>
                     <p>3人に1人が頭痛で日常生活に支障をきたしています</p>
                 </div>
             </div>
             
-            <div class="impact-grid">
-                <div class="impact-card">
+            <div class="impact-section">
+                <div class="impact-item">
                     <h3>身体への影響</h3>
                     <ul>
                         <li><strong>慢性頭痛</strong><br>目の奥の緊張が三叉神経を刺激し、激しい頭痛を引き起こす</li>
@@ -755,7 +618,7 @@
                     </ul>
                 </div>
                 
-                <div class="impact-card">
+                <div class="impact-item">
                     <h3>精神・神経への影響</h3>
                     <ul>
                         <li><strong>集中力・記憶力の著しい低下</strong><br>脳の疲労により仕事や学習の効率が激減</li>
@@ -763,7 +626,7 @@
                     </ul>
                 </div>
                 
-                <div class="impact-card">
+                <div class="impact-item">
                     <h3>生活の質への深刻な影響</h3>
                     <ul>
                         <li><strong>仕事・学習能力の完全停止</strong><br>集中が続かず生産性が限界まで低下</li>
@@ -775,155 +638,155 @@
     </section>
 
     <!-- 解決策セクション -->
-    <section class="section solution-section">
-        <div class="container">
-            <div class="solution-highlight">
-                <h2>当院がその問題を完全解決</h2>
-                <p style="font-size: 1.5rem; margin: 20px 0;">「目と頭の重さがスッと消える」</p>
-                <p style="font-size: 1.3rem; color: #ffeb3b;">施術中に睡眠に陥る方続出中！</p>
+    <section class="solution-section">
+        <div class="solution-highlight">
+            <h2>当院がその問題を完全解決</h2>
+            <p>「目と頭の重さがスッと消える」</p>
+            <p style="color: #ffeb3b;">施術中に睡眠に陥る方続出中！</p>
+        </div>
+        
+        <h3 class="section-title" style="color: white; font-size: 2.5rem;">5段階専門施術プロセス</h3>
+        
+        <div class="treatment-videos">
+            <div class="treatment-video">
+                <h3>① 頭蓋骨調整</h3>
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="①頭蓋骨.mov" type="video/quicktime">
+                    <source src="①頭蓋骨.mov" type="video/mp4">
+                </video>
+                <div class="video-description">
+                    がちがちに固まった頭の緊張を根本から取り除く第1段階の専門施術
+                </div>
             </div>
             
-            <h3 class="section-title" style="font-size: 2.5rem;">5段階専門施術プロセス</h3>
+            <div class="treatment-video">
+                <h3>② 骨格矯正（食いしばり改善）</h3>
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="②葉の食いしばり.mov" type="video/quicktime">
+                    <source src="②葉の食いしばり.mov" type="video/mp4">
+                </video>
+                <div class="video-description">
+                    食いしばりや顔のバランスを整え、顔のむくみを劇的に改善
+                </div>
+            </div>
             
-            <div class="treatment-videos">
-                <div class="treatment-video">
-                    <h3>① 頭蓋骨調整</h3>
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src="①頭蓋骨.mov" type="video/quicktime">
-                        <source src="①頭蓋骨.mov" type="video/mp4">
-                    </video>
-                    <div class="video-description">
-                        がちがちに固まった頭の緊張を根本から取り除く第1段階の専門施術
-                    </div>
+            <div class="treatment-video">
+                <h3>③ 目の周囲筋肉調整</h3>
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="③目の周囲.mov" type="video/quicktime">
+                    <source src="③目の周囲.mov" type="video/mp4">
+                </video>
+                <div class="video-description">
+                    眼精疲労の根本原因を解消し、頭痛を即座に緩和する特殊技術
                 </div>
-                
-                <div class="treatment-video">
-                    <h3>② 骨格矯正（食いしばり改善）</h3>
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src="②葉の食いしばり.mov" type="video/quicktime">
-                        <source src="②葉の食いしばり.mov" type="video/mp4">
-                    </video>
-                    <div class="video-description">
-                        食いしばりや顔のバランスを整え、顔のむくみを劇的に改善
-                    </div>
-                </div>
-                
-                <div class="treatment-video">
-                    <h3>③ 目の周囲筋肉調整</h3>
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src="③目の周囲.mov" type="video/quicktime">
-                        <source src="③目の周囲.mov" type="video/mp4">
-                    </video>
-                    <div class="video-description">
-                        眼精疲労の根本原因を解消し、頭痛を即座に緩和する特殊技術
-                    </div>
-                </div>
-                
-                <div class="treatment-video">
-                    <h3>④ 首肩回り筋肉調整</h3>
-                    <video autoplay muted loop playsinline preload="metadata">
-                        <source src="④首肩回り.mov" type="video/quicktime">
-                        <source src="④首肩回り.mov" type="video/mp4">
-                    </video>
-                    <div class="video-description">
-                        首コリ・肩こりを完全解消し、血流を劇的に改善する最終調整
-                    </div>
+            </div>
+            
+            <div class="treatment-video">
+                <h3>④ 首肩回り筋肉調整</h3>
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="④首肩回り.mov" type="video/quicktime">
+                    <source src="④首肩回り.mov" type="video/mp4">
+                </video>
+                <div class="video-description">
+                    首コリ・肩こりを完全解消し、血流を劇的に改善する最終調整
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 自律神経セクション -->
-    <section class="section autonomic-section">
-        <div class="container">
-            <h2 class="section-title">第5段階：自律神経完全調整</h2>
-            <p style="font-size: 1.3rem; text-align: center; margin-bottom: 40px;">
-                微弱電流という特殊な電気で自律神経を根本から整えます
-            </p>
-            
-            <div class="autonomic-images">
-                <img src="⑤自律神経１.jpeg" alt="自律神経調整の様子1">
-                <img src="⑤自律神経２.jpeg" alt="自律神経調整の様子2">
-                <img src="⑤自律神経３.jpeg" alt="自律神経調整の様子3">
-            </div>
-            
-            <div style="background: rgba(255, 255, 255, 0.1); padding: 40px; border-radius: 20px; margin: 40px 0; backdrop-filter: blur(15px);">
-                <h3 style="color: #64b5f6; font-size: 1.8rem; margin-bottom: 20px; text-align: center;">上記の全てを60分みっちり行います！</h3>
-                <p style="font-size: 1.2rem; text-align: center;">一般的な30分の施術とは完全に違う、根本的改善を実現する本格治療</p>
-            </div>
+    <section class="autonomic-section">
+        <h2 class="section-title" style="color: white;">第5段階：自律神経完全調整</h2>
+        <p style="font-size: 1.5rem; margin-bottom: 60px;">
+            微弱電流という特殊な電気で自律神経を根本から整えます
+        </p>
+        
+        <div class="autonomic-images">
+            <img src="⑤自律神経１.jpeg" alt="自律神経調整の様子1">
+            <img src="⑤自律神経２.jpeg" alt="自律神経調整の様子2">
+            <img src="⑤自律神経３.jpeg" alt="自律神経調整の様子3">
+        </div>
+        
+        <div style="background: rgba(255, 255, 255, 0.1); padding: 60px 40px; border-radius: 25px; margin: 60px auto; max-width: 800px; backdrop-filter: blur(15px);">
+            <h3 style="color: #64b5f6; font-size: 2rem; margin-bottom: 25px;">上記の全てを60分みっちり行います！</h3>
+            <p style="font-size: 1.4rem;">一般的な30分の施術とは完全に違う、根本的改善を実現する本格治療</p>
         </div>
     </section>
 
     <!-- 最終CTA -->
-    <section class="section final-cta">
-        <div class="container">
-            <h2 class="section-title">今すぐその辛さから解放されませんか？</h2>
+    <section class="final-cta">
+        <h2 class="section-title" style="color: white;">今すぐその辛さから解放されませんか？</h2>
+        
+        <div class="testimonial-video">
+            <video autoplay muted loop playsinline preload="metadata">
+                <source src="最後のCTAの近ちく.mov" type="video/quicktime">
+                <source src="最後のCTAの近ちく.mov" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="contact-info">
+            <span class="original-price" style="font-size: 2rem;">通常料金 16,000円</span>
+            <div class="price-display" style="color: #ffeb3b;">初回限定 8,000円</div>
+            <p style="font-size: 1.8rem; margin: 30px 0; color: #ff4081;">50% OFF!</p>
             
-            <div class="testimonial-video">
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="最後のCTAの近ちく.mov" type="video/quicktime">
-                    <source src="最後のCTAの近ちく.mov" type="video/mp4">
-                </video>
+            <a href="tel:070-5530-6656" class="cta-button" style="margin: 40px 0;">
+                <img src="cta-button.png" alt="今すぐ電話で予約する" style="height: 100px;">
+            </a>
+            
+            <div class="phone-number">070-5530-6656</div>
+            
+            <div class="store-info">
+                <h4>店舗情報</h4>
+                <p><strong>所在地：</strong><br>
+                〒812-0878 福岡県福岡市博多区竹丘町２丁目４−１８</p>
+                <p><strong>電話番号：</strong> 070-5530-6656</p>
+                <p><strong>営業時間：</strong> 日祝休み、土曜は午前のみ</p>
             </div>
             
-            <div class="contact-info">
-                <div style="text-align: center;">
-                    <span class="original-price" style="font-size: 1.8rem;">通常料金 16,000円</span>
-                    <div class="price-display" style="color: #ffeb3b;">初回限定 8,000円</div>
-                    <p style="font-size: 1.5rem; margin: 20px 0; color: #ff4081;">50% OFF!</p>
-                    
-                    <a href="tel:070-5530-6656" class="cta-button" style="margin: 30px 0;">
-                        <img src="cta-button.png" alt="今すぐ電話で予約する" style="height: 80px;">
-                    </a>
-                    
-                    <div class="phone-number">070-5530-6656</div>
-                    
-                    <div style="background: rgba(255, 255, 255, 0.1); padding: 25px; border-radius: 15px; margin: 30px 0; backdrop-filter: blur(10px);">
-                        <h4 style="color: #ffeb3b; margin-bottom: 15px; font-size: 1.3rem;">店舗情報</h4>
-                        <p style="margin: 10px 0; font-size: 1.1rem;">
-                            <strong>所在地：</strong><br>
-                            〒812-0878 福岡県福岡市博多区竹丘町２丁目４−１８
-                        </p>
-                        <p style="margin: 10px 0; font-size: 1.1rem;">
-                            <strong>電話番号：</strong> 070-5530-6656
-                        </p>
-                        <p style="margin: 10px 0; font-size: 1.1rem;">
-                            <strong>営業時間：</strong> 日祝休み、土曜は午前のみ
-                        </p>
-                    </div>
-                    
-                    <div class="urgency-banner">
-                        ⚠️ 予約困難1ヶ月待ちのメニューが今月のみ1日2名限定で解放中！
-                    </div>
-                    
-                    <p style="font-size: 1.3rem; margin-top: 30px; color: #ffeb3b;">
-                        「頭痛と目の疲れを今すぐ何とかしたい」<br>
-                        と電話でお伝えください
-                    </p>
-                </div>
+            <div class="urgency-banner">
+                ⚠️ 予約困難1ヶ月待ちのメニューが今月のみ1日2名限定で解放中！
             </div>
+            
+            <p style="font-size: 1.5rem; margin-top: 40px; color: #ffeb3b;">
+                「頭痛と目の疲れを今すぐ何とかしたい」<br>
+                と電話でお伝えください
+            </p>
         </div>
     </section>
 
+    <!-- フッター -->
+    <footer style="background: linear-gradient(135deg, #1a237e 0%, #000051 100%); padding: 60px 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <img src="logo.png" alt="桜並木駅前の整骨院" style="height: 80px; margin-bottom: 30px;">
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px); margin: 30px 0;">
+                <h4 style="color: #ffeb3b; margin-bottom: 25px; font-size: 1.6rem;">桜並木駅前の整骨院</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: left;">
+                    <div>
+                        <p style="margin: 12px 0; font-size: 1.1rem;">
+                            <strong style="color: #64b5f6;">所在地：</strong><br>
+                            〒812-0878<br>
+                            福岡県福岡市博多区竹丘町２丁目４−１８
+                        </p>
+                    </div>
+                    <div>
+                        <p style="margin: 12px 0; font-size: 1.1rem;">
+                            <strong style="color: #64b5f6;">電話番号：</strong><br>
+                            <a href="tel:070-5530-6656" style="color: #ffeb3b; text-decoration: none; font-size: 1.4rem; font-weight: bold;">070-5530-6656</a>
+                        </p>
+                        <p style="margin: 12px 0; font-size: 1.1rem;">
+                            <strong style="color: #64b5f6;">営業時間：</strong><br>
+                            日祝休み、土曜は午前のみ
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 40px; opacity: 0.7; font-size: 1rem;">
+                &copy; 2025 桜並木駅前の整骨院. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
     <script>
-        // スクロールアニメーション
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
         // 動画の最適化
         document.querySelectorAll('video').forEach(video => {
             video.setAttribute('webkit-playsinline', '');
@@ -932,44 +795,5 @@
             video.preload = 'metadata';
         });
     </script>
-
-    <!-- ヘッダー -->
-    <div class="header">
-        <div class="header-content">
-            <img src="logo.png" alt="桜並木駅前の整骨院" class="header-logo">
-        </div>
-    </div>
-
-    <!-- フッター -->
-    <footer style="background: linear-gradient(135deg, #1a237e 0%, #000051 100%); padding: 40px 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-        <div class="container">
-            <img src="logo.png" alt="桜並木駅前の整骨院" style="height: 60px; margin-bottom: 20px;">
-            <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); margin: 20px 0;">
-                <h4 style="color: #ffeb3b; margin-bottom: 20px; font-size: 1.4rem;">桜並木駅前の整骨院</h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
-                    <div>
-                        <p style="margin: 8px 0; font-size: 1rem;">
-                            <strong style="color: #64b5f6;">所在地：</strong><br>
-                            〒812-0878<br>
-                            福岡県福岡市博多区竹丘町２丁目４−１８
-                        </p>
-                    </div>
-                    <div>
-                        <p style="margin: 8px 0; font-size: 1rem;">
-                            <strong style="color: #64b5f6;">電話番号：</strong><br>
-                            <a href="tel:070-5530-6656" style="color: #ffeb3b; text-decoration: none; font-size: 1.2rem; font-weight: bold;">070-5530-6656</a>
-                        </p>
-                        <p style="margin: 8px 0; font-size: 1rem;">
-                            <strong style="color: #64b5f6;">営業時間：</strong><br>
-                            日祝休み、土曜は午前のみ
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <p style="margin-top: 30px; opacity: 0.7; font-size: 0.9rem;">
-                &copy; 2025 桜並木駅前の整骨院. All rights reserved.
-            </p>
-        </div>
-    </footer>
 </body>
 </html>
