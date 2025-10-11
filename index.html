@@ -184,6 +184,16 @@
             100% { transform: scale(1); }
         }
         
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
         /* セクション共通 */
         .section {
             padding: 60px 20px;
@@ -349,11 +359,9 @@
         }
         
         .treatment-video video {
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-bottom: 15px;
+            width: calc(100vw - 40px);
+            max-width: 100%;
+            margin: 0 auto 15px auto;
             display: block;
         }
         
