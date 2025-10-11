@@ -30,10 +30,8 @@
         
         .hero-image {
             width: 100vw;
-            min-width: 100vw;
             height: 80vh;
-            min-height: 80vh;
-            object-fit: cover;
+            object-fit: contain;
             object-position: center center;
             display: block;
             margin: 0;
@@ -41,6 +39,7 @@
             top: 0;
             left: 0;
             right: 0;
+            background: #1a237e;
         }
         
         .hero-content {
@@ -455,8 +454,7 @@
         @media (max-width: 768px) {
             .hero-image {
                 height: 70vh;
-                min-height: 70vh;
-                object-fit: cover;
+                object-fit: contain;
                 object-position: center center;
             }
             
