@@ -53,7 +53,7 @@
             align-items: center;
             justify-content: center;
             z-index: 10;
-            margin-top: 70vh;
+            margin-top: 50vh;
         }
         
         .hero h1 {
@@ -360,7 +360,19 @@
         .treatment-video video {
             width: 100vw;
             margin-left: calc(-50vw + 50%);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .problem-video video {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            display: block;
+        }
+        
+        .testimonial-video video {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
             display: block;
         }
         
@@ -459,7 +471,7 @@
             }
             
             .hero-content {
-                margin-top: 60vh;
+                margin-top: 40vh;
                 padding: 30px 20px;
             }
             
@@ -507,12 +519,6 @@
             }
         }
         
-        @media (max-width: 480px) {
-            .problem-section .section div[style*="grid-template-columns: repeat(3, 1fr)"] {
-                grid-template-columns: 1fr !important;
-                gap: 15px !important;
-            }
-        }
     </style>
 </head>
 <body>
@@ -540,47 +546,18 @@
         <div class="section">
             <h2 class="section-title" style="font-size: 1.8rem;">🧠 こんな症状はありませんか?</h2>
             
-            <div style="max-width: 700px; margin: 50px auto;">
-                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); padding: 40px 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);">
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 25px;">
-                        <div style="text-align: center; padding: 20px 15px; background: rgba(255, 255, 255, 0.1); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);">
-                            <div style="font-size: 2.5rem; margin-bottom: 10px;">😴</div>
-                            <div style="font-size: 1rem; color: #fff; font-weight: 500;">寝ても疲れが取れない</div>
-                        </div>
-                        <div style="text-align: center; padding: 20px 15px; background: rgba(255, 255, 255, 0.1); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);">
-                            <div style="font-size: 2.5rem; margin-bottom: 10px;">😰</div>
-                            <div style="font-size: 1rem; color: #fff; font-weight: 500;">首・肩がいつも重い</div>
-                        </div>
-                        <div style="text-align: center; padding: 20px 15px; background: rgba(255, 255, 255, 0.1); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);">
-                            <div style="font-size: 2.5rem; margin-bottom: 10px;">😵</div>
-                            <div style="font-size: 1rem; color: #fff; font-weight: 500;">目の奥がズーンと痛い</div>
-                        </div>
-                    </div>
-                    
-                    <div style="text-align: center; padding: 25px; background: rgba(0, 0, 0, 0.3); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                        <div style="font-size: 1.2rem; color: #fff; font-weight: 600; line-height: 1.4;">
-                            これらの症状は単なる<span style="color: #64b5f6; font-weight: 700;">"体の疲れ"</span>ではありません
-                        </div>
-                    </div>
+            <div style="text-align: center; max-width: 600px; margin: 50px auto;">
+                <div style="font-size: 1.5rem; color: #fff; margin-bottom: 30px; line-height: 1.8;">
+                    ✓ 寝ても疲れが取れない<br>
+                    ✓ 首・肩がいつも重い<br>
+                    ✓ 目の奥がズーンと痛い
+                </div>
+                
+                <div style="font-size: 1.2rem; color: #fff; margin-top: 40px;">
+                    これらの症状は単なる<span style="color: #64b5f6; font-weight: 700;">"体の疲れ"</span>ではありません
                 </div>
             </div>
             
-            <div style="text-align: center; max-width: 700px; margin: 40px auto;">
-                <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 30px;">
-                    それは<strong style="color: #ffeb3b;">"体の疲れ"</strong>ではなく、<br>
-                    <strong style="color: #ff4081;">脳のオーバーヒート = 脳疲労</strong>が原因かもしれません。
-                </p>
-                
-                <div style="background: rgba(100, 181, 246, 0.1); padding: 30px 25px; border-radius: 15px; border: 2px solid rgba(100, 181, 246, 0.3); margin-top: 30px;">
-                    <h3 style="color: #64b5f6; font-size: 1.3rem; margin-bottom: 15px;">🔍 脳疲労とは</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 15px; color: #64b5f6;">
-                        ストレス・スマホ・デスクワークで現代人の脳は常に緊張状態
-                    </p>
-                    <p style="font-size: 1rem; line-height: 1.8;">
-                        脳が疲れると筋肉は固まり、呼吸は浅くなり、全身が<strong style="color: #ff4081;">「休めない体」</strong>になります。
-                    </p>
-                </div>
-            </div>
             
         </div>
     </section>
@@ -665,29 +642,12 @@
         <div class="section">
             <h2 class="section-title" style="color: white; font-size: 1.8rem;">👑 このような方におすすめ</h2>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1200px; margin: 60px auto;">
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 40px 30px; border-radius: 20px; text-align: center; backdrop-filter: blur(10px); border: 2px solid rgba(100, 181, 246, 0.3);">
-                    <div style="font-size: 2.5rem; margin-bottom: 20px;">💻</div>
-                    <h3 style="color: #64b5f6; font-size: 1.1rem; margin-bottom: 15px;">デスクワークで常に首肩が重い</h3>
-                    <p style="font-size: 1rem; line-height: 1.6;">長時間のパソコン作業による慢性的な首肩の重さを根本から解消</p>
-                </div>
-                
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 40px 30px; border-radius: 20px; text-align: center; backdrop-filter: blur(10px); border: 2px solid rgba(255, 152, 0, 0.3);">
-                    <div style="font-size: 2.5rem; margin-bottom: 20px;">🌙</div>
-                    <h3 style="color: #ff9800; font-size: 1.1rem; margin-bottom: 15px;">睡眠の質を上げたい</h3>
-                    <p style="font-size: 1rem; line-height: 1.6;">深い眠りを取り戻し、朝の目覚めをスッキリと改善</p>
-                </div>
-                
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 40px 30px; border-radius: 20px; text-align: center; backdrop-filter: blur(10px); border: 2px solid rgba(255, 68, 129, 0.3);">
-                    <div style="font-size: 2.5rem; margin-bottom: 20px;">🫁</div>
-                    <h3 style="color: #ff4081; font-size: 1.1rem; margin-bottom: 15px;">ストレスで呼吸が浅い</h3>
-                    <p style="font-size: 1rem; line-height: 1.6;">自律神経を整え、深くリラックスした呼吸を取り戻す</p>
-                </div>
-                
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 40px 30px; border-radius: 20px; text-align: center; backdrop-filter: blur(10px); border: 2px solid rgba(255, 235, 59, 0.3);">
-                    <div style="font-size: 2.5rem; margin-bottom: 20px;">⚖️</div>
-                    <h3 style="color: #ffeb3b; font-size: 1.1rem; margin-bottom: 15px;">自律神経・ホルモンバランスを整えたい</h3>
-                    <p style="font-size: 1rem; line-height: 1.6;">体の内側から整えて、心身ともに健康な状態へ</p>
+            <div style="text-align: center; max-width: 800px; margin: 60px auto;">
+                <div style="font-size: 1.3rem; color: #fff; line-height: 2;">
+                    ✓ デスクワークで常に首肩が重い<br>
+                    ✓ 睡眠の質を上げたい<br>
+                    ✓ ストレスで呼吸が浅い<br>
+                    ✓ 自律神経・ホルモンバランスを整えたい
                 </div>
             </div>
         </div>
@@ -697,20 +657,10 @@
     <section class="final-cta" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #2980b9 100%);">
         <h2 class="section-title" style="color: white; font-size: 1.8rem;">🌙 施術時間・料金</h2>
         
-        <div style="max-width: 800px; margin: 60px auto; text-align: center;">
-            <div style="background: rgba(255, 255, 255, 0.1); padding: 60px 40px; border-radius: 25px; backdrop-filter: blur(15px); margin-bottom: 60px;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px;">
-                    <div>
-                        <div style="font-size: 2.5rem; margin-bottom: 15px;">📍</div>
-                        <h3 style="color: #64b5f6; font-size: 1.1rem; margin-bottom: 10px;">所要時間</h3>
-                        <p style="font-size: 1.2rem; font-weight: 600;">約60分</p>
-                    </div>
-                    <div>
-                        <div style="font-size: 2.5rem; margin-bottom: 15px;">🕊</div>
-                        <h3 style="color: #64b5f6; font-size: 1.1rem; margin-bottom: 10px;">予約制限</h3>
-                        <p style="font-size: 1.2rem; font-weight: 600;">一日1名限定・完全予約制</p>
-                    </div>
-                </div>
+        <div style="text-align: center; max-width: 600px; margin: 60px auto;">
+            <div style="font-size: 1.4rem; color: #fff; line-height: 1.8; margin-bottom: 40px;">
+                所要時間：約60分<br>
+                一日1名限定・完全予約制
             </div>
         </div>
         
