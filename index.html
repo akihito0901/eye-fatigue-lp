@@ -230,11 +230,62 @@
             left: 100%;
         }
         
-        .line-icon {
-            font-size: 1.8rem;
-            margin-right: 12px;
+        .discount-badge {
+            position: relative;
             display: inline-block;
-            animation: iconPulse 1.5s ease-in-out infinite;
+            background: linear-gradient(135deg, #ff4081 0%, #e91e63 50%, #c2185b 100%);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 25px;
+            margin: 20px 0;
+            transform: rotate(-5deg);
+            box-shadow: 0 15px 30px rgba(255, 64, 129, 0.5),
+                        0 5px 15px rgba(0, 0, 0, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            animation: discountPulse 2s ease-in-out infinite;
+            overflow: hidden;
+        }
+        
+        .discount-percent {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        .discount-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .discount-shine {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+            animation: shine 3s ease-in-out infinite;
+        }
+        
+        @keyframes discountPulse {
+            0%, 100% {
+                transform: rotate(-5deg) scale(1);
+            }
+            50% {
+                transform: rotate(-5deg) scale(1.1);
+            }
+        }
+        
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
         }
         
         .line-text {
@@ -825,10 +876,13 @@
         <div class="contact-info">
             <span class="original-price" style="font-size: 2rem;">通常料金 16,000円</span>
             <div class="price-display" style="color: #ffeb3b; font-size: 2rem;">初回限定 8,000円</div>
-            <p style="font-size: 1.5rem; margin: 30px 0; color: #ff4081;">50% OFF!</p>
+            <div class="discount-badge">
+                <span class="discount-percent">50%</span>
+                <span class="discount-text">OFF</span>
+                <div class="discount-shine"></div>
+            </div>
             
             <a href="https://lin.ee/uqCRkRL" class="line-cta-button" target="_blank">
-                <span class="line-icon">📱</span>
                 <span class="line-text">LINEでカンタン予約</span>
                 <span class="line-sub">今すぐ友達追加</span>
             </a>
