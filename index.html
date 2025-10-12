@@ -148,16 +148,53 @@
         
         .cta-button {
             display: inline-block;
-            margin: 30px 0;
+            margin: 40px 0;
             border: none;
             background: none;
             cursor: pointer;
             text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+            animation: ctaPulse 2s infinite;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+        
+        .cta-button:active {
+            transform: scale(0.95);
         }
         
         .cta-button img {
             width: auto;
-            height: 120px;
+            height: 180px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255, 64, 129, 0.4), 
+                        0 0 40px rgba(255, 235, 59, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 4px 15px rgba(255, 64, 129, 0.5));
+        }
+        
+        .cta-button:hover img {
+            box-shadow: 0 15px 40px rgba(255, 64, 129, 0.6), 
+                        0 0 60px rgba(255, 235, 59, 0.5),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            filter: drop-shadow(0 6px 20px rgba(255, 64, 129, 0.7));
+        }
+        
+        @keyframes ctaPulse {
+            0% { 
+                box-shadow: 0 0 0 0 rgba(255, 64, 129, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 64, 129, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 64, 129, 0);
+            }
         }
         
         .urgency-banner {
@@ -514,7 +551,7 @@
             }
             
             .cta-button img {
-                height: 80px;
+                height: 140px;
             }
             
             .contact-info, .store-info {
@@ -716,7 +753,7 @@
             <p style="font-size: 1.5rem; margin: 30px 0; color: #ff4081;">50% OFF!</p>
             
             <a href="tel:070-5530-6656" class="cta-button" style="margin: 40px 0;">
-                <img src="cta-button.png" alt="今すぐ電話で予約する" style="height: 140px;">
+                <img src="cta-button-new.png" alt="今すぐ電話で予約する">
             </a>
             
             <div class="phone-number">070-5530-6656</div>
