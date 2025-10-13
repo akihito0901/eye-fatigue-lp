@@ -366,6 +366,38 @@
             100% { background-position: 0% 50%; }
         }
         
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+        
+        .booking-alert {
+            background: linear-gradient(135deg, #ff4081 0%, #e91e63 100%);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            margin: 30px auto;
+            max-width: 400px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(255, 64, 129, 0.4);
+            animation: blink 2s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .booking-alert::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+            animation: shine 3s ease-in-out infinite;
+        }
+        
         /* セクション共通 */
         .section {
             padding: 60px 20px;
@@ -711,6 +743,10 @@
         <img src="hero-image-final.png" alt="脳疲労リセット整体" style="width: 100%; height: 100%; object-fit: cover; display: block; margin: 0; padding: 0;">
     </section>
 
+    <!-- 予約通知アラート -->
+    <div class="booking-alert" id="bookingAlert">
+        🔥 今日は<span id="bookingCount">4</span>名様がご予約されました！
+    </div>
 
     <!-- 症状チェックセクション -->
     <section style="background: #1a237e; padding: 80px 0; overflow-x: hidden; margin: 0;">
@@ -822,27 +858,11 @@
                 <p style="font-size: 1rem; color: #fff; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
                     首・眼・頭蓋・神経の4点を同時施術。全国的にも希少な専門技術。
                 </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 800px; margin: 40px auto;">
-                    <div style="background: linear-gradient(135deg, #ff4081 0%, #e91e63 100%); padding: 20px; border-radius: 15px; text-align: center; box-shadow: 0 8px 25px rgba(255, 64, 129, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div style="font-size: 2rem; margin-bottom: 10px;">🧠</div>
-                        <div style="color: #fff; font-weight: 700; font-size: 1rem;">首の深層筋</div>
-                        <div style="color: rgba(255,255,255,0.9); font-size: 0.8rem; margin-top: 5px;">Deep Muscle</div>
-                    </div>
-                    <div style="background: linear-gradient(135deg, #64b5f6 0%, #2196f3 100%); padding: 20px; border-radius: 15px; text-align: center; box-shadow: 0 8px 25px rgba(100, 181, 246, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div style="font-size: 2rem; margin-bottom: 10px;">👁️</div>
-                        <div style="color: #fff; font-weight: 700; font-size: 1rem;">眼精疲労</div>
-                        <div style="color: rgba(255,255,255,0.9); font-size: 0.8rem; margin-top: 5px;">Eye Strain</div>
-                    </div>
-                    <div style="background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%); padding: 20px; border-radius: 15px; text-align: center; box-shadow: 0 8px 25px rgba(255, 235, 59, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div style="font-size: 2rem; margin-bottom: 10px;">💀</div>
-                        <div style="color: #333; font-weight: 700; font-size: 1rem;">頭蓋調整</div>
-                        <div style="color: rgba(51,51,51,0.8); font-size: 0.8rem; margin-top: 5px;">Cranial</div>
-                    </div>
-                    <div style="background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%); padding: 20px; border-radius: 15px; text-align: center; box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div style="font-size: 2rem; margin-bottom: 10px;">⚡</div>
-                        <div style="color: #fff; font-weight: 700; font-size: 1rem;">自律神経</div>
-                        <div style="color: rgba(255,255,255,0.9); font-size: 0.8rem; margin-top: 5px;">Nervous</div>
-                    </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; max-width: 500px; margin: 20px auto;">
+                    <div style="color: #64b5f6; font-weight: 600; font-size: 0.9rem;">首の深層筋</div>
+                    <div style="color: #64b5f6; font-weight: 600; font-size: 0.9rem;">眼精疲労</div>
+                    <div style="color: #64b5f6; font-weight: 600; font-size: 0.9rem;">頭蓋調整</div>
+                    <div style="color: #64b5f6; font-weight: 600; font-size: 0.9rem;">自律神経</div>
                 </div>
             </div>
 
@@ -1008,6 +1028,11 @@
             </div>
             
         </div>
+        
+        <!-- 予約通知アラート（CTA後） -->
+        <div class="booking-alert" id="bookingAlert2">
+            ⚡ 残り枠わずか！今日は既に<span id="bookingCount2">5</span>名様がご予約済み
+        </div>
     </section>
 
     <!-- フッター -->
@@ -1050,6 +1075,21 @@
             video.muted = true;
             video.preload = 'metadata';
         });
+        
+        // 予約数のランダム表示
+        function updateBookingCounts() {
+            const count1 = Math.floor(Math.random() * 4) + 3; // 3-6の乱数
+            const count2 = Math.floor(Math.random() * 4) + 3; // 3-6の乱数
+            
+            document.getElementById('bookingCount').textContent = count1;
+            document.getElementById('bookingCount2').textContent = count2;
+        }
+        
+        // ページ読み込み時に予約数を設定
+        updateBookingCounts();
+        
+        // 30秒ごとに予約数を更新（リアル感演出）
+        setInterval(updateBookingCounts, 30000);
     </script>
 </body>
 </html>
