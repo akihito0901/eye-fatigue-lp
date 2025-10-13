@@ -1079,8 +1079,8 @@
             video.preload = 'metadata';
         });
         
-        // 予約数のランダム表示
-        function updateBookingCounts() {
+        // 予約数のランダム表示（ページロード時のみ）
+        function setBookingCount() {
             const count = Math.floor(Math.random() * 4) + 3; // 3-6の乱数
             
             // 全てのアラートで同じ数字を使用
@@ -1089,11 +1089,8 @@
             document.getElementById('bookingCount3').textContent = count;
         }
         
-        // ページ読み込み時に予約数を設定
-        updateBookingCounts();
-        
-        // 30秒ごとに予約数を更新（リアル感演出）
-        setInterval(updateBookingCounts, 30000);
+        // ページ読み込み時に1回だけ予約数を設定
+        setBookingCount();
     </script>
 </body>
 </html>
