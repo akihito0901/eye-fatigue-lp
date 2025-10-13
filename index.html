@@ -372,73 +372,22 @@
         }
         
         .booking-alert {
-            background: linear-gradient(135deg, #000000 0%, #333333 50%, #000000 100%);
-            border: 2px solid #ff4081;
+            background: linear-gradient(135deg, #ff4081 0%, #e91e63 100%);
             color: #fff;
-            padding: 20px 40px;
-            border-radius: 15px;
+            padding: 15px 30px;
+            border-radius: 25px;
             margin: 30px auto;
-            max-width: 450px;
+            max-width: 400px;
             text-align: center;
             font-weight: 700;
-            font-size: 1.2rem;
-            box-shadow: 0 0 30px rgba(255, 64, 129, 0.6), 
-                        0 0 60px rgba(255, 64, 129, 0.3),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            animation: neonPulse 2s infinite;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            text-shadow: 0 0 10px rgba(255, 64, 129, 0.8);
-        }
-        
-        .booking-alert::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #ff4081, #64b5f6, #ffeb3b, #ff4081);
-            border-radius: 15px;
-            z-index: -1;
-            animation: borderRotate 3s linear infinite;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 20px rgba(255, 64, 129, 0.4);
+            animation: blink 2s infinite;
         }
         
         .booking-alert span {
             color: #ffeb3b;
-            font-size: 1.4rem;
-            text-shadow: 0 0 15px rgba(255, 235, 59, 0.8);
-            animation: numberGlow 1.5s ease-in-out infinite alternate;
-        }
-        
-        @keyframes neonPulse {
-            0%, 100% {
-                box-shadow: 0 0 30px rgba(255, 64, 129, 0.6), 
-                            0 0 60px rgba(255, 64, 129, 0.3),
-                            inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            }
-            50% {
-                box-shadow: 0 0 40px rgba(255, 64, 129, 0.8), 
-                            0 0 80px rgba(255, 64, 129, 0.5),
-                            inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            }
-        }
-        
-        @keyframes borderRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        @keyframes numberGlow {
-            0% {
-                text-shadow: 0 0 15px rgba(255, 235, 59, 0.8);
-                transform: scale(1);
-            }
-            100% {
-                text-shadow: 0 0 25px rgba(255, 235, 59, 1);
-                transform: scale(1.05);
-            }
+            font-size: 1.2rem;
         }
         
         /* セクション共通 */
@@ -786,6 +735,10 @@
         <img src="hero-image-final.png" alt="脳疲労リセット整体" style="width: 100%; height: 100%; object-fit: cover; display: block; margin: 0; padding: 0;">
     </section>
 
+    <!-- 予約通知アラート（ヒーロー後） -->
+    <div class="booking-alert">
+        🔥 本日<span id="bookingCount1">4</span>名様がご予約済み
+    </div>
 
     <!-- 症状チェックセクション -->
     <section style="background: #1a237e; padding: 80px 0; overflow-x: hidden; margin: 0;">
@@ -883,6 +836,17 @@
             <h3 style="color: #64b5f6; font-size: 1.5rem; margin-bottom: 15px;">上記の全てを60分みっちり行います！</h3>
             <p style="font-size: 1.1rem;">心も体も深く休める極上の60分をぜひご体感ください。</p>
         </div>
+    </section>
+
+    <!-- 5ステップ後のCTA -->
+    <section style="background: linear-gradient(135deg, #ff4081 0%, #e91e63 100%); padding: 40px 20px; text-align: center;">
+        <div class="booking-alert" style="margin-bottom: 30px;">
+            ⚡ 残り枠わずか！本日<span id="bookingCount2">4</span>名様がご予約済み
+        </div>
+        <a href="https://lin.ee/uqCRkRL" class="line-cta-button" target="_blank" style="margin: 20px 0;">
+            <span class="line-text">今すぐLINEで予約</span>
+            <span class="line-sub">簡単30秒で完了</span>
+        </a>
     </section>
 
     <!-- 選ばれる5つの理由セクション -->
@@ -1068,9 +1032,9 @@
             
         </div>
         
-        <!-- 予約通知アラート（CTA前） -->
+        <!-- 予約通知アラート（最終CTA前） -->
         <div class="booking-alert" style="margin: 40px auto 20px auto;">
-            🔥 本日<span id="bookingCount">4</span>名様がご予約済み
+            🔥 本日<span id="bookingCount3">4</span>名様がご予約済み
         </div>
     </section>
 
@@ -1119,7 +1083,10 @@
         function updateBookingCounts() {
             const count = Math.floor(Math.random() * 4) + 3; // 3-6の乱数
             
-            document.getElementById('bookingCount').textContent = count;
+            // 全てのアラートで同じ数字を使用
+            document.getElementById('bookingCount1').textContent = count;
+            document.getElementById('bookingCount2').textContent = count;
+            document.getElementById('bookingCount3').textContent = count;
         }
         
         // ページ読み込み時に予約数を設定
