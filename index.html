@@ -14,7 +14,7 @@
         body {
             font-family: 'Hiragino Sans', 'ヒラギノ角ゴシック', 'Yu Gothic Medium', 'メイリオ', sans-serif;
             line-height: 1.6;
-            color: #333333;
+            color: #202124;
             background: #ffffff;
             overflow-x: hidden;
         }
@@ -122,7 +122,7 @@
         .benefit-item p {
             font-size: 1rem;
             line-height: 1.6;
-            color: #5f6368;
+            color: #202124;
         }
         
         /* CTA */
@@ -344,6 +344,17 @@
             0% { transform: scale(1); }
             50% { transform: scale(1.02); }
             100% { transform: scale(1); }
+        }
+        
+        @keyframes ctaPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 8px 20px rgba(52, 168, 83, 0.6);
+            }
         }
         
         @keyframes rotate {
@@ -733,7 +744,7 @@
 
     <!-- 緊急性アラート（ヒーロー後） -->
     <div style="background: #ea4335; color: #fff; padding: 20px; text-align: center; font-weight: 700; font-size: 1.1rem; margin: 0; box-shadow: 0 4px 12px rgba(234, 67, 53, 0.3);">
-        ⚠️ 【緊急告知】今週の残り枠：あと2名様のみ ⚠️<br>
+        ⚠️ 今週の残り枠：あと2名様のみ ⚠️<br>
         <span style="font-size: 0.95rem; margin-top: 5px; display: block;">次回予約可能日：11月2週目以降</span>
     </div>
 
@@ -741,16 +752,16 @@
     <section style="background: #f8f9fa; padding: 80px 0; overflow-x: hidden; margin: 0;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <h1 style="font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; text-align: center; margin-bottom: 60px; color: #1a73e8; line-height: 1.3;">【脳疲労リセット整体】</h1>
-            <h3 style="font-size: 1.4rem; text-align: center; margin-bottom: 40px; color: #5f6368;">"脳を静める時間"を、あなたに。</h3>
+            <h3 style="font-size: 1.4rem; text-align: center; margin-bottom: 40px; color: #202124;">"脳を静める時間"を、あなたに。</h3>
         </div>
         
         <img src="symptoms-image-new.jpg" alt="症状アイコン" style="width: 100vw; margin-left: calc(-50vw + 50%); margin-bottom: 40px; object-fit: cover; height: 300px;">
         
         <div style="max-width: 800px; margin: 0 auto; padding: 40px 20px; text-align: center;">
-            <div style="font-size: 1.1rem; color: #5f6368; line-height: 1.8; margin-bottom: 20px;">
+            <div style="font-size: 1.1rem; color: #202124; line-height: 1.8; margin-bottom: 20px;">
                 <strong>ストレス・スマホ・デスクワーク</strong>の普及により、<strong>現代人の脳は常に緊張し、休めていません。</strong>
             </div>
-            <div style="font-size: 1.1rem; color: #5f6368; line-height: 1.8; margin-bottom: 20px;">
+            <div style="font-size: 1.1rem; color: #202124; line-height: 1.8; margin-bottom: 20px;">
                 <strong>脳が疲れると</strong>筋肉は固まり、呼吸は浅く、全身が<strong>「休めない体」</strong>になります。
             </div>
             <div style="font-size: 1.2rem; color: #1a73e8; line-height: 1.8; font-weight: 600;">
@@ -762,87 +773,87 @@
     </section>
 
     <!-- 解決策セクション -->
-    <section class="solution-section">
+    <section style="background: #ffffff; padding: 80px 0; position: relative; overflow-x: hidden;">
         
-        <h3 class="section-title" style="color: white; font-size: 1.6rem;">脳疲労リセットの5ステップ</h3>
+        <h3 style="color: #1a73e8; font-size: 2rem; text-align: center; margin-bottom: 40px; font-weight: 700;">脳疲労リセットの5ステップ</h3>
         
         <div class="treatment-videos">
             <div class="treatment-video">
-                <h3 style="font-size: 1.2rem;">① 首・肩の深層手技</h3>
+                <h3 style="font-size: 1.3rem; color: #1a73e8; font-weight: 600; margin-bottom: 15px;">① 首・肩の深層手技</h3>
                 <video autoplay muted loop playsinline preload="metadata" style="width: 100vw; margin-left: calc(-50vw + 50%); margin-bottom: 15px; display: block;">
                     <source src="最後のCTAの近ちく.mov" type="video/quicktime">
                     <source src="最後のCTAの近ちく.mov" type="video/mp4">
                 </video>
-                <div class="video-description" style="font-size: 0.9rem;">
+                <div style="font-size: 1rem; color: #202124; line-height: 1.6;">
                     長時間の緊張で固まった深層筋を、専門の手技で丁寧にリリース。<br>
                     脳への血流を回復させます。
                 </div>
             </div>
             
             <div class="treatment-video">
-                <h3 style="font-size: 1.2rem;">② 眼精疲労マッサージ</h3>
+                <h3 style="font-size: 1.3rem; color: #1a73e8; font-weight: 600; margin-bottom: 15px;">② 眼精疲労マッサージ</h3>
                 <video autoplay muted loop playsinline preload="metadata" style="width: 100vw; margin-left: calc(-50vw + 50%); margin-bottom: 15px; display: block;">
                     <source src="③目の周囲.mov" type="video/quicktime">
                     <source src="③目の周囲.mov" type="video/mp4">
                 </video>
-                <div class="video-description" style="font-size: 0.9rem;">
+                <div style="font-size: 1rem; color: #202124; line-height: 1.6;">
                     目の奥〜側頭部にかけての筋肉と神経を緩め、視神経の圧迫を解消。<br>
                     「目が明るく見える」「視界がスッキリ」と感じる方も。
                 </div>
             </div>
             
             <div class="treatment-video">
-                <h3 style="font-size: 1.2rem;">③ 頭蓋調整(クラニオ手技)</h3>
+                <h3 style="font-size: 1.3rem; color: #1a73e8; font-weight: 600; margin-bottom: 15px;">③ 頭蓋調整(クラニオ手技)</h3>
                 <video autoplay muted loop playsinline preload="metadata" style="width: 100vw; margin-left: calc(-50vw + 50%); margin-bottom: 15px; display: block;">
                     <source src="cranio-video.mov" type="video/quicktime">
                     <source src="cranio-video.mov" type="video/mp4">
                 </video>
-                <div class="video-description" style="font-size: 0.9rem;">
+                <div style="font-size: 1rem; color: #202124; line-height: 1.6;">
                     脳を包む頭蓋骨のわずかな歪みを整えることで、脳脊髄液の循環を改善。<br>
                     脳の圧迫感・重だるさを軽減します。
                 </div>
             </div>
             
             <div class="treatment-video">
-                <h3 style="font-size: 1.2rem;">④ 最新医療機器による筋緩和</h3>
+                <h3 style="font-size: 1.3rem; color: #1a73e8; font-weight: 600; margin-bottom: 15px;">④ 最新医療機器による筋緩和</h3>
                 <video autoplay muted loop playsinline preload="metadata" style="width: 100vw; margin-left: calc(-50vw + 50%); margin-bottom: 15px; display: block;">
                     <source src="medical-device-video.mov" type="video/quicktime">
                     <source src="medical-device-video.mov" type="video/mp4">
                 </video>
-                <div class="video-description" style="font-size: 0.9rem;">
+                <div style="font-size: 1rem; color: #202124; line-height: 1.6;">
                     最新医療機器で首・肩の深部筋を非侵襲的にリリース。<br>
                     頭への血流を安定化させます。
                 </div>
             </div>
             
             <div class="treatment-video">
-                <h3 style="font-size: 1.2rem;">⑤ 微弱電流による疲労回復</h3>
+                <h3 style="font-size: 1.3rem; color: #1a73e8; font-weight: 600; margin-bottom: 15px;">⑤ 微弱電流による疲労回復</h3>
                 <div class="autonomic-images" style="display: flex; flex-direction: column; gap: 20px; margin: 20px 0; max-width: 400px; margin-left: auto; margin-right: auto;">
                     <img src="⑤自律神経１.jpeg" alt="微弱電流による疲労回復の様子1" style="width: 100%; border-radius: 10px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);">
                     <img src="⑤自律神経２.jpeg" alt="微弱電流による疲労回復の様子2" style="width: 100%; border-radius: 10px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);">
                     <img src="⑤自律神経３.jpeg" alt="微弱電流による疲労回復の様子3" style="width: 100%; border-radius: 10px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);">
                 </div>
-                <div class="video-description" style="font-size: 0.9rem;">
+                <div style="font-size: 1rem; color: #202124; line-height: 1.6;">
                     特殊微弱電流で神経伝達を整え、副交感神経を優位に。<br>
                     全身の力が抜け、呼吸が深くなり、「施術中に眠ってしまう」方も多数。
                 </div>
             </div>
         </div>
         
-        <div style="background: rgba(255, 255, 255, 0.1); padding: 40px 30px; border-radius: 20px; margin: 50px auto; max-width: 700px; backdrop-filter: blur(15px); text-align: center;">
-            <h3 style="color: #64b5f6; font-size: 1.5rem; margin-bottom: 15px;">上記の全てを60分みっちり行います！</h3>
-            <p style="font-size: 1.1rem;">心も体も深く休める極上の60分をぜひご体感ください。</p>
+        <div style="background: #f8f9fa; padding: 40px 30px; border-radius: 12px; margin: 50px auto; max-width: 700px; text-align: center; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); border: 1px solid #e8eaed;">
+            <h3 style="color: #1a73e8; font-size: 1.5rem; margin-bottom: 15px; font-weight: 600;">上記の全てを60分みっちり行います！</h3>
+            <p style="font-size: 1.1rem; color: #202124;">心も体も深く休める極上の60分をぜひご体感ください。</p>
         </div>
     </section>
 
     <!-- 5ステップ後のCTA -->
     <section style="background: #1a73e8; padding: 40px 20px; text-align: center;">
-        <div style="background: #ea4335; color: #fff; padding: 15px 25px; border-radius: 8px; margin-bottom: 25px; font-weight: 700; font-size: 1.1rem; display: inline-block; box-shadow: 0 4px 12px rgba(234, 67, 53, 0.4);">
+        <div style="color: #fff; margin-bottom: 25px; font-size: 1.1rem;">
             🚨 残り枠：今週あと2名様限定 🚨<br>
-            <span style="font-size: 0.9rem; font-weight: 500;">満席になり次第、11月2週目以降の案内となります</span>
+            <span style="font-size: 0.9rem; margin-top: 5px; display: block;">満席になり次第、11月2週目以降の案内となります</span>
         </div>
         <div style="margin: 20px 0;">
-            <a href="https://lin.ee/uqCRkRL" class="line-cta-button" target="_blank" style="margin: 20px 0;">
+            <a href="https://lin.ee/uqCRkRL" class="line-cta-button" target="_blank" style="margin: 20px 0; animation: ctaPulse 2s infinite;">
                 <span class="line-text">今すぐLINEで予約</span>
                 <span class="line-sub">簡単30秒で完了</span>
             </a>
@@ -1112,7 +1123,7 @@
                 ⬇️ 予約はここから！ ⬇️
             </div>
             
-            <a href="https://lin.ee/uqCRkRL" class="line-cta-button" target="_blank">
+            <a href="https://lin.ee/uqCRkRL" class="line-cta-button" target="_blank" style="animation: ctaPulse 2s infinite;">
                 <span class="line-text">LINEでカンタン予約</span>
                 <span class="line-sub">今すぐ友達追加</span>
             </a>
@@ -1143,7 +1154,7 @@
                 </div>
             </div>
             
-            <div style="background: #ea4335; color: #fff; padding: 20px 30px; border-radius: 8px; margin: 30px auto; max-width: 500px; font-weight: 700; font-size: 1.2rem; text-align: center; box-shadow: 0 4px 12px rgba(234, 67, 53, 0.4); animation: pulse 2s infinite;">
+            <div style="color: #fff; margin: 30px auto; max-width: 500px; font-weight: 700; font-size: 1.2rem; text-align: center;">
                 ⏰ 残り枠：あと2名様のみ ⏰<br>
                 <span style="font-size: 1rem; font-weight: 500; margin-top: 8px; display: block;">今週を逃すと次回は11月2週目以降になります</span>
             </div>
