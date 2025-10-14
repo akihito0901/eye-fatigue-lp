@@ -378,6 +378,11 @@
             51%, 100% { opacity: 0.3; }
         }
         
+        @keyframes urgencyBlink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.5; }
+        }
+        
         .booking-alert {
             background: linear-gradient(135deg, #ff4081 0%, #e91e63 100%);
             color: #fff;
@@ -743,7 +748,7 @@
     </section>
 
     <!-- 緊急性アラート（ヒーロー後） -->
-    <div style="background: #ea4335; color: #fff; padding: 20px; text-align: center; font-weight: 700; font-size: 1.1rem; margin: 0; box-shadow: 0 4px 12px rgba(234, 67, 53, 0.3);">
+    <div style="background: #ea4335; color: #fff; padding: 20px; text-align: center; font-weight: 700; font-size: 1.1rem; margin: 0; box-shadow: 0 4px 12px rgba(234, 67, 53, 0.3); animation: urgencyBlink 1.5s infinite;">
         ⚠️ 今週の残り枠：あと2名様のみ ⚠️<br>
         <span style="font-size: 0.95rem; margin-top: 5px; display: block;">次回予約可能日：11月2週目以降</span>
     </div>
@@ -848,7 +853,7 @@
 
     <!-- 5ステップ後のCTA -->
     <section style="background: #1a73e8; padding: 40px 20px; text-align: center;">
-        <div style="color: #fff; margin-bottom: 25px; font-size: 1.1rem;">
+        <div style="color: #fff; margin-bottom: 25px; font-size: 1.1rem; animation: urgencyBlink 1.5s infinite;">
             🚨 残り枠：今週あと2名様限定 🚨<br>
             <span style="font-size: 0.9rem; margin-top: 5px; display: block;">満席になり次第、11月2週目以降の案内となります</span>
         </div>
@@ -863,7 +868,7 @@
     <!-- 選ばれる5つの理由セクション -->
     <section style="background: linear-gradient(135deg, #1a237e 0%, #303f9f 50%, #3f51b5 100%); padding: 80px 0; position: relative; overflow-x: hidden;">
         <div class="section">
-            <h2 class="section-title" style="color: white; font-size: 1.8rem; margin-bottom: 60px;">桜並木駅前の整骨院が選ばれる5つの理由</h2>
+            <h2 class="section-title" style="margin-bottom: 60px;">桜並木駅前の整骨院が選ばれる5つの理由</h2>
             
             <!-- ① 脳疲労専門の4点連動アプローチ -->
             <div style="margin: 60px 0; text-align: center;">
@@ -1146,7 +1151,7 @@
                 </div>
             </div>
             
-            <div style="color: #fff; margin: 30px auto; max-width: 500px; font-weight: 700; font-size: 1.2rem; text-align: center;">
+            <div style="color: #fff; margin: 30px auto; max-width: 500px; font-weight: 700; font-size: 1.2rem; text-align: center; animation: urgencyBlink 1.5s infinite;">
                 ⏰ 残り枠：あと2名様のみ ⏰<br>
                 <span style="font-size: 1rem; font-weight: 500; margin-top: 8px; display: block;">今週を逃すと次回は11月2週目以降になります</span>
             </div>
