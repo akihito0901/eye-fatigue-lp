@@ -14,8 +14,8 @@
         body {
             font-family: 'Hiragino Sans', 'ヒラギノ角ゴシック', 'Yu Gothic Medium', 'メイリオ', sans-serif;
             line-height: 1.6;
-            color: #ffffff;
-            background: #0a0a0a;
+            color: #333333;
+            background: #ffffff;
             overflow-x: hidden;
         }
         
@@ -24,7 +24,7 @@
         .hero {
             position: relative;
             height: 100vh;
-            background: #1a237e;
+            background: #f8f9fa;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -55,14 +55,15 @@
             font-size: clamp(1.5rem, 4vw, 2.2rem);
             font-weight: 700;
             margin-bottom: 25px;
-            color: #ffffff;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+            color: #1a73e8;
+            text-shadow: none;
             letter-spacing: -0.01em;
             line-height: 1.3;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.95);
             padding: 20px;
             border-radius: 15px;
             backdrop-filter: blur(10px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
         }
         
         .hero-video {
@@ -80,7 +81,7 @@
         
         /* ベネフィット */
         .benefits {
-            background: rgba(255, 255, 255, 0.05);
+            background: #f8f9fa;
             padding: 80px 20px;
             margin: 0;
             text-align: center;
@@ -89,10 +90,8 @@
         .benefits h2 {
             font-size: clamp(1.5rem, 3vw, 2.2rem);
             margin-bottom: 40px;
-            background: linear-gradient(135deg, #ffffff 0%, #64b5f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #1a73e8;
+            font-weight: 600;
         }
         
         .benefits-grid {
@@ -116,18 +115,19 @@
         .benefit-item h3 {
             font-size: 1.3rem;
             margin-bottom: 12px;
-            color: #64b5f6;
+            color: #1a73e8;
             font-weight: 600;
         }
         
         .benefit-item p {
             font-size: 1rem;
             line-height: 1.6;
+            color: #5f6368;
         }
         
         /* CTA */
         .cta-section {
-            background: linear-gradient(135deg, #ff4081 0%, #e91e63 100%);
+            background: #1a73e8;
             padding: 60px 20px;
             margin: 0;
             text-align: center;
@@ -187,32 +187,28 @@
         
         .line-cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #00C300 0%, #00B900 50%, #009E00 100%);
+            background: #34a853;
             color: #fff;
             padding: 25px 40px;
-            border-radius: 60px;
+            border-radius: 8px;
             text-decoration: none;
             font-family: 'Hiragino Sans', sans-serif;
             margin: 30px 0;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 195, 0, 0.4), 
-                        0 5px 15px rgba(0, 0, 0, 0.2),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: lineBounce 2s ease-in-out infinite;
+            box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 600;
         }
         
         .line-cta-button:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 25px 50px rgba(0, 195, 0, 0.6), 
-                        0 10px 25px rgba(0, 0, 0, 0.3),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.4);
-            animation-play-state: paused;
+            background: #2d7a3e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(52, 168, 83, 0.4);
         }
         
         .line-cta-button:active {
-            transform: translateY(-4px) scale(1.02);
+            transform: translateY(0);
         }
         
         .line-cta-button::before {
@@ -735,30 +731,31 @@
         <img src="hero-image-final.png" alt="脳疲労リセット整体" style="width: 100%; height: 100%; object-fit: cover; display: block; margin: 0; padding: 0;">
     </section>
 
-    <!-- 予約通知アラート（ヒーロー後） -->
-    <div class="booking-alert">
-        🔥 本日<span id="bookingCount1">4</span>名様がご予約済み
+    <!-- 緊急性アラート（ヒーロー後） -->
+    <div style="background: #ea4335; color: #fff; padding: 20px; text-align: center; font-weight: 700; font-size: 1.1rem; margin: 0; box-shadow: 0 4px 12px rgba(234, 67, 53, 0.3);">
+        ⚠️ 【緊急告知】今週の残り枠：あと2名様のみ ⚠️<br>
+        <span style="font-size: 0.95rem; margin-top: 5px; display: block;">次回予約可能日：11月2週目以降</span>
     </div>
 
     <!-- 症状チェックセクション -->
-    <section style="background: #1a237e; padding: 80px 0; overflow-x: hidden; margin: 0;">
+    <section style="background: #f8f9fa; padding: 80px 0; overflow-x: hidden; margin: 0;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <h1 style="font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; text-align: center; margin-bottom: 60px; color: #ffffff; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); line-height: 1.3;">【脳疲労リセット整体】</h1>
-            <h3 style="font-size: 1.4rem; text-align: center; margin-bottom: 40px; color: #fff;">"脳を静める時間"を、あなたに。</h3>
+            <h1 style="font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; text-align: center; margin-bottom: 60px; color: #1a73e8; line-height: 1.3;">【脳疲労リセット整体】</h1>
+            <h3 style="font-size: 1.4rem; text-align: center; margin-bottom: 40px; color: #5f6368;">"脳を静める時間"を、あなたに。</h3>
         </div>
         
         <img src="symptoms-image-new.jpg" alt="症状アイコン" style="width: 100vw; margin-left: calc(-50vw + 50%); margin-bottom: 40px; object-fit: cover; height: 300px;">
         
         <div style="max-width: 800px; margin: 0 auto; padding: 40px 20px; text-align: center;">
-            <div style="font-size: 1.1rem; color: #fff; line-height: 1.8; margin-bottom: 20px;">
+            <div style="font-size: 1.1rem; color: #5f6368; line-height: 1.8; margin-bottom: 20px;">
                 <strong>ストレス・スマホ・デスクワーク</strong>の普及により、<strong>現代人の脳は常に緊張し、休めていません。</strong>
             </div>
-            <div style="font-size: 1.1rem; color: #fff; line-height: 1.8; margin-bottom: 20px;">
+            <div style="font-size: 1.1rem; color: #5f6368; line-height: 1.8; margin-bottom: 20px;">
                 <strong>脳が疲れると</strong>筋肉は固まり、呼吸は浅く、全身が<strong>「休めない体」</strong>になります。
             </div>
-            <div style="font-size: 1.2rem; color: #64b5f6; line-height: 1.8; font-weight: 600;">
+            <div style="font-size: 1.2rem; color: #1a73e8; line-height: 1.8; font-weight: 600;">
                 <strong>疲れがとれないのは、</strong><br>
-                <strong>脳のオーバーヒート</strong> = <span style="color: #ff4081; font-weight: 700; font-size: 1.3rem;">脳疲労</span>が原因かもしれません。
+                <strong>脳のオーバーヒート</strong> = <span style="color: #ea4335; font-weight: 700; font-size: 1.3rem;">脳疲労</span>が原因かもしれません。
             </div>
         </div>
         
@@ -839,14 +836,17 @@
     </section>
 
     <!-- 5ステップ後のCTA -->
-    <section style="background: linear-gradient(135deg, #ff4081 0%, #e91e63 100%); padding: 40px 20px; text-align: center;">
-        <div class="booking-alert" style="margin-bottom: 30px;">
-            ⚡ 残り枠わずか！本日<span id="bookingCount2">4</span>名様がご予約済み
+    <section style="background: #1a73e8; padding: 40px 20px; text-align: center;">
+        <div style="background: #ea4335; color: #fff; padding: 15px 25px; border-radius: 8px; margin-bottom: 25px; font-weight: 700; font-size: 1.1rem; display: inline-block; box-shadow: 0 4px 12px rgba(234, 67, 53, 0.4);">
+            🚨 残り枠：今週あと2名様限定 🚨<br>
+            <span style="font-size: 0.9rem; font-weight: 500;">満席になり次第、11月2週目以降の案内となります</span>
         </div>
-        <a href="https://lin.ee/uqCRkRL" class="line-cta-button" target="_blank" style="margin: 20px 0;">
-            <span class="line-text">今すぐLINEで予約</span>
-            <span class="line-sub">簡単30秒で完了</span>
-        </a>
+        <div style="margin: 20px 0;">
+            <a href="https://lin.ee/uqCRkRL" class="line-cta-button" target="_blank" style="margin: 20px 0;">
+                <span class="line-text">今すぐLINEで予約</span>
+                <span class="line-sub">簡単30秒で完了</span>
+            </a>
+        </div>
     </section>
 
     <!-- 選ばれる5つの理由セクション -->
@@ -915,11 +915,17 @@
             <h2 class="section-title" style="color: white; font-size: 1.8rem; margin-bottom: 60px;">患者様の声</h2>
             
             <div style="text-align: center; margin-bottom: 40px;">
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; backdrop-filter: blur(10px); display: inline-block;">
-                    <div style="color: #ffeb3b; font-size: 1.2rem; margin-bottom: 10px; font-weight: 700;">
-                        ★ 患者満足度98％ ★ 改善実感率95％ ★
+                <div style="background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); display: inline-block; border: 1px solid #e8eaed;">
+                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Google_Maps_Logo_2020.svg" alt="Google Maps" style="height: 20px; margin-right: 8px;">
+                        <div style="color: #1a73e8; font-size: 1.1rem; font-weight: 600; margin-right: 10px;">Google口コミ</div>
+                        <div style="color: #fbbc04; font-size: 1.3rem;">★★★★★</div>
+                        <div style="color: #5f6368; font-size: 1rem; margin-left: 5px;">5.0</div>
                     </div>
-                    <div style="color: #64b5f6; font-size: 1rem;">
+                    <div style="color: #1a73e8; font-size: 1.2rem; margin-bottom: 8px; font-weight: 700;">
+                        📍 患者満足度98％ ⚡ 改善実感率95％
+                    </div>
+                    <div style="color: #5f6368; font-size: 1rem;">
                         国家資格保有者による10年以上の実績
                     </div>
                 </div>
@@ -928,74 +934,92 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
                 
                 <!-- 口コミ1 -->
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); border-left: 4px solid #ff4081;">
-                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div style="color: #ff4081; font-size: 1.5rem; margin-right: 10px;">★★★★★</div>
-                        <div style="color: #fff; font-weight: 600;">W.D.さん（40代女性）</div>
+                <div style="background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); border: 1px solid #e8eaed;">
+                    <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: #1a73e8; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 12px; font-size: 0.9rem;">WD</div>
+                        <div>
+                            <div style="color: #202124; font-weight: 600; font-size: 0.95rem;">W.D.さん</div>
+                            <div style="color: #fbbc04; font-size: 1rem; margin-top: 2px;">★★★★★</div>
+                        </div>
                     </div>
-                    <div style="color: #fff; font-size: 1rem; line-height: 1.6;">
+                    <div style="color: #5f6368; font-size: 0.95rem; line-height: 1.5;">
                         母の腰痛と自分の身体の不調で通院。<strong>最初の施術で腰痛が大幅改善</strong>、私自身も少しずつ良くなっているのを実感。先生の親身な対応と清潔な院内で安心して施術を受けられます。
                     </div>
                 </div>
 
                 <!-- 口コミ2 -->
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); border-left: 4px solid #64b5f6;">
-                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div style="color: #ff4081; font-size: 1.5rem; margin-right: 10px;">★★★★★</div>
-                        <div style="color: #fff; font-weight: 600;">Y.さん（30代男性）</div>
+                <div style="background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); border: 1px solid #e8eaed;">
+                    <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: #34a853; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 12px; font-size: 0.9rem;">Y</div>
+                        <div>
+                            <div style="color: #202124; font-weight: 600; font-size: 0.95rem;">Y.さん</div>
+                            <div style="color: #fbbc04; font-size: 1rem; margin-top: 2px;">★★★★★</div>
+                        </div>
                     </div>
-                    <div style="color: #fff; font-size: 1rem; line-height: 1.6;">
+                    <div style="color: #5f6368; font-size: 0.95rem; line-height: 1.5;">
                         ひどい肩こり・腰痛で来院。<strong>駅徒歩1分のアクセス</strong>と丁寧なカウンセリングが印象的。<strong>施術後は肩・首がスッと軽く</strong>なりました。無理な勧誘もなく自分のペースで通えます。
                     </div>
                 </div>
 
                 <!-- 口コミ3 -->
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); border-left: 4px solid #ffeb3b;">
-                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div style="color: #ff4081; font-size: 1.5rem; margin-right: 10px;">★★★★★</div>
-                        <div style="color: #fff; font-weight: 600;">R.K.さん（50代女性）</div>
+                <div style="background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); border: 1px solid #e8eaed;">
+                    <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: #fbbc04; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 12px; font-size: 0.9rem;">RK</div>
+                        <div>
+                            <div style="color: #202124; font-weight: 600; font-size: 0.95rem;">R.K.さん</div>
+                            <div style="color: #fbbc04; font-size: 1rem; margin-top: 2px;">★★★★★</div>
+                        </div>
                     </div>
-                    <div style="color: #fff; font-size: 1rem; line-height: 1.6;">
+                    <div style="color: #5f6368; font-size: 0.95rem; line-height: 1.5;">
                         腰の不調の原因を瞬時に見抜き、<strong>的確な施術で身体が軽く</strong>なりました。気さくで話しやすい院長の力加減も絶妙。対処法まで教えてくれる親切さに感謝です。
                     </div>
                 </div>
 
                 <!-- 口コミ4 -->
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); border-left: 4px solid #ff9800;">
-                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div style="color: #ff4081; font-size: 1.5rem; margin-right: 10px;">★★★★★</div>
-                        <div style="color: #fff; font-weight: 600;">K.さん（40代女性）</div>
+                <div style="background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); border: 1px solid #e8eaed;">
+                    <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: #ea4335; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 12px; font-size: 0.9rem;">K</div>
+                        <div>
+                            <div style="color: #202124; font-weight: 600; font-size: 0.95rem;">K.さん</div>
+                            <div style="color: #fbbc04; font-size: 1rem; margin-top: 2px;">★★★★★</div>
+                        </div>
                     </div>
-                    <div style="color: #fff; font-size: 1rem; line-height: 1.6;">
+                    <div style="color: #5f6368; font-size: 0.95rem; line-height: 1.5;">
                         足腰の痛み、反り腰、巻き肩まで総合的に施術。<strong>相談しやすい優しい先生</strong>で、駐車場代も負担してくれる心遣いが嬉しい。友人にもおすすめしています。
                     </div>
                 </div>
 
                 <!-- 口コミ5 -->
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); border-left: 4px solid #9c27b0;">
-                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div style="color: #ff4081; font-size: 1.5rem; margin-right: 10px;">★★★★★</div>
-                        <div style="color: #fff; font-weight: 600;">N.さん（20代女性）</div>
+                <div style="background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); border: 1px solid #e8eaed;">
+                    <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: #9c27b0; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 12px; font-size: 0.9rem;">N</div>
+                        <div>
+                            <div style="color: #202124; font-weight: 600; font-size: 0.95rem;">N.さん</div>
+                            <div style="color: #fbbc04; font-size: 1rem; margin-top: 2px;">★★★★★</div>
+                        </div>
                     </div>
-                    <div style="color: #fff; font-size: 1rem; line-height: 1.6;">
+                    <div style="color: #5f6368; font-size: 0.95rem; line-height: 1.5;">
                         無料体験から1ヶ月通院中。首の凝りと腰痛で悩んでいましたが、<strong>今までの整骨院とは違い確実に良くなっている</strong>のを実感。継続したいと思える施術です。
                     </div>
                 </div>
 
                 <!-- 口コミ6 -->
-                <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px); border-left: 4px solid #4caf50;">
-                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                        <div style="color: #ff4081; font-size: 1.5rem; margin-right: 10px;">★★★★★</div>
-                        <div style="color: #fff; font-weight: 600;">F.さん（30代男性）</div>
+                <div style="background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); border: 1px solid #e8eaed;">
+                    <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: #34a853; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 12px; font-size: 0.9rem;">F</div>
+                        <div>
+                            <div style="color: #202124; font-weight: 600; font-size: 0.95rem;">F.さん</div>
+                            <div style="color: #fbbc04; font-size: 1rem; margin-top: 2px;">★★★★★</div>
+                        </div>
                     </div>
-                    <div style="color: #fff; font-size: 1rem; line-height: 1.6;">
+                    <div style="color: #5f6368; font-size: 0.95rem; line-height: 1.5;">
                         体験から継続通院中。いつも疲れて行くので本当に助かっています。<strong>身体を安心してお任せできる</strong>と思える整骨院です。
                     </div>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 50px;">
-                <div style="background: linear-gradient(135deg, #ff4081 0%, #e91e63 100%); padding: 20px 40px; border-radius: 25px; display: inline-block; color: #fff; font-size: 1.1rem; font-weight: 700; box-shadow: 0 8px 25px rgba(255, 64, 129, 0.4);">
+                <div style="background: #1a73e8; padding: 20px 40px; border-radius: 8px; display: inline-block; color: #fff; font-size: 1.1rem; font-weight: 600; box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);">
                     💝 あなたも同じような変化を実感してみませんか？
                 </div>
             </div>
@@ -1119,15 +1143,11 @@
                 </div>
             </div>
             
-            <div class="urgency-banner">
-                ⚠️ 予約が埋まり次第終了します。
+            <div style="background: #ea4335; color: #fff; padding: 20px 30px; border-radius: 8px; margin: 30px auto; max-width: 500px; font-weight: 700; font-size: 1.2rem; text-align: center; box-shadow: 0 4px 12px rgba(234, 67, 53, 0.4); animation: pulse 2s infinite;">
+                ⏰ 残り枠：あと2名様のみ ⏰<br>
+                <span style="font-size: 1rem; font-weight: 500; margin-top: 8px; display: block;">今週を逃すと次回は11月2週目以降になります</span>
             </div>
             
-        </div>
-        
-        <!-- 予約通知アラート（最終CTA前） -->
-        <div class="booking-alert" style="margin: 40px auto 20px auto;">
-            🔥 本日<span id="bookingCount3">4</span>名様がご予約済み
         </div>
     </section>
 
@@ -1172,18 +1192,8 @@
             video.preload = 'metadata';
         });
         
-        // 予約数のランダム表示（ページロード時のみ）
-        function setBookingCount() {
-            const count = Math.floor(Math.random() * 4) + 3; // 3-6の乱数
-            
-            // 全てのアラートで同じ数字を使用
-            document.getElementById('bookingCount1').textContent = count;
-            document.getElementById('bookingCount2').textContent = count;
-            document.getElementById('bookingCount3').textContent = count;
-        }
-        
-        // ページ読み込み時に1回だけ予約数を設定
-        setBookingCount();
+        // 緊急性メッセージの強化
+        console.log('緊急性アラート表示中：残り枠2名様限定');
     </script>
 </body>
 </html>
