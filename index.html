@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -712,15 +712,24 @@
 </head>
 <body>
   <main>
-    <section class="hero">
-      <div class="wrap hero-inner">
+    <section class="hero" style="position:relative; min-height:100svh; overflow:hidden; display:flex; align-items:flex-end;">
+      <video
+        src="hero-video.mov"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;"
+      ></video>
+      <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(4,13,31,0.3) 0%, rgba(4,13,31,0.1) 40%, rgba(4,13,31,0.82) 70%, rgba(4,13,31,0.96) 100%); z-index:1;"></div>
+      <div class="wrap hero-inner" style="position:relative; z-index:2; width:100%;">
         <div class="hero-copy">
           <div class="hero-badge">桜並木駅 徒歩1分 / 完全予約制</div>
           <p class="hero-kicker">至高の睡眠を手に入れる。</p>
           <h1>脳疲労リセット<span>VIPコース</span></h1>
           <p class="hero-lead"><strong>プロの手技と最新機器</strong>による、ここにしかない極上ケア。目・頭・首肩・自律神経を整え、深く休める身体へ導きます。</p>
           <div class="hero-actions">
-            <a class="btn btn-line" href="https://lin.ee/uqCRkRL" target="_blank" rel="noopener">LINEで初回予約する</a>
             <a class="btn btn-dark" href="#offer">料金を見る</a>
           </div>
           <div class="hero-proof" aria-label="特徴">
@@ -769,7 +778,7 @@
         </div>
         <div class="step-grid">
           <article class="step">
-            <div class="step-media"><video src="④首肩回り.mov" autoplay muted loop playsinline preload="metadata"></video></div>
+            <div class="step-media"><video src="最後のCTAの近ちく.mov" autoplay muted loop playsinline preload="metadata"></video></div>
             <div class="step-body"><div class="step-num">STEP 01</div><h3>首・肩の深層手技</h3><p>固まった首肩の深層筋へ丁寧にアプローチし、頭部と目にかかる負担を整えます。</p></div>
           </article>
           <article class="step">
@@ -822,7 +831,7 @@
           <article class="reason"><img src="reason2-qualification-experience.jpeg" alt="国家資格者による施術"><div><h3>国家資格者が担当</h3><p>身体の状態を確認しながら、無理のない施術を行います。</p></div></article>
           <article class="reason"><img src="reason3-private-space.jpg" alt="プライベート空間"><div><h3>落ち着いた個室空間</h3><p>周囲を気にせず相談しやすい環境を整えています。</p></div></article>
           <article class="reason"><img src="reason4-station-access.webp" alt="桜並木駅から徒歩1分"><div><h3>駅徒歩1分</h3><p>仕事帰りや買い物の前後にも通いやすい立地です。</p></div></article>
-          <article class="reason"><img src="reason5-childcare-service.jpg" alt="託児サービス"><div><h3>子育て世代も相談可</h3><p>育児中の疲れや睡眠不足による不調も相談できます。</p></div></article>
+          <article class="reason"><img src="reason5-childcare-service.jpg" alt="無料の託児サービス"><div><h3>無料の託児サービス</h3><p>看護師免許保有スタッフがお子さまを見守ります。安心してお身体のケアに集中していただけます。</p></div></article>
         </div>
       </div>
     </section>
