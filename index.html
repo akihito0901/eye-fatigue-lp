@@ -32,6 +32,7 @@
 
     html {
       scroll-behavior: smooth;
+      background-color: #f0f4f8; /* PCでの背景色 */
     }
 
     body {
@@ -40,6 +41,10 @@
       background: var(--paper);
       line-height: 1.75;
       overflow-x: hidden;
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+      position: relative;
     }
 
     img,
@@ -663,7 +668,6 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 980px) {
       .problem-grid,
       .answer-card,
       .offer-box,
@@ -672,15 +676,13 @@
       }
 
       .reason-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
       }
 
       .review-grid {
         grid-template-columns: 1fr;
       }
-    }
 
-    @media (max-width: 720px) {
       .hero {
         background:
           linear-gradient(180deg, rgba(4, 13, 31, 0.5) 0%, rgba(4, 13, 31, 0.12) 36%, rgba(4, 13, 31, 0.88) 68%, rgba(4, 13, 31, 0.96) 100%),
@@ -728,9 +730,12 @@
 
       .fixed-cta {
         display: block;
-        left: 14px;
-        right: 14px;
+        left: 0;
+        right: 0;
         bottom: 12px;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 14px;
       }
 
       .fixed-cta .btn {
@@ -742,7 +747,6 @@
       .final-video video {
         min-height: 300px;
       }
-    }
   </style>
 </head>
 <body>
@@ -767,23 +771,12 @@
       </div>
     </section>
 
-    <section class="section problem">
-      <div class="wrap problem-grid">
-        <div class="image-card">
-          <img src="symptoms-image-new.jpg" alt="目の疲れや頭の重さに悩む方の症状イメージ">
-        </div>
-        <div>
-          <span class="eyebrow">こんな状態が続いていませんか</span>
-          <div class="check-list">
-            <div class="check-item">夕方になると目の奥が重く、集中力が落ちる</div>
-            <div class="check-item">首・肩が硬く、頭痛や頭のぼんやり感がある</div>
-            <div class="check-item">寝ても疲れが抜けず、朝からだるい</div>
-            <div class="check-item">食いしばりや緊張で顔まわりまでこわばる</div>
-            <div class="check-item">マッサージに行ってもすぐ戻ってしまう</div>
-          </div>
-          <p class="notice" style="margin-top: 18px;">症状の原因や回復ペースには個人差があります。必要に応じて医療機関の受診もご案内します。</p>
-        </div>
-      </div>
+    <section class="problem" style="padding: 0; background: #fff;">
+      <img src="symptoms-new.png" alt="30〜50代女性に選ばれています" style="width: 100%; height: auto; display: block;" />
+    </section>
+
+    <section class="features" style="padding: 0; background: #fff;">
+      <img src="features-new.png" alt="当院の施術の特徴" style="width: 100%; height: auto; display: block;" />
     </section>
 
     <section class="section answer">
