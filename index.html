@@ -500,11 +500,16 @@
     }
 
     .step-num {
-      color: var(--gold);
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      font-size: 0.72rem;
+      display: inline-block;
+      color: #000;
+      background: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      font-size: 0.78rem;
       font-family: "Zen Kaku Gothic New", sans-serif;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 4px;
     }
 
     .step h3 {
@@ -825,15 +830,7 @@
 <body>
   <main>
     <section class="hero" style="position:relative; min-height:100svh; overflow:hidden; display:flex; align-items:flex-end;">
-      <video
-        class="hero-video"
-        src="hero-video.mov"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-      ></video>
+      <img class="hero-video" src="hero-new.png" alt="頭が重い。眠りが浅い。" style="object-fit:cover;">
       <div class="hero-overlay"></div>
       <div class="wrap hero-inner" style="position:relative; z-index:2; width:100%;">
         <div class="hero-copy">
@@ -842,7 +839,7 @@
           <h1>脳疲労リセット<span>VIPコース</span></h1>
           <p class="hero-lead"><strong>プロの手技と最新機器</strong>による、ここにしかない極上ケア。目・頭・首肩・自律神経を整え、深く休める身体へ導きます。</p>
           <div class="hero-proof" aria-label="特徴">
-            <div><strong>50%OFF</strong><span>初回限定 16,000円 → 8,000円</span></div>
+            <div><strong>初回8,000円</strong><span>1回 13,000円 / 1日3名限定</span></div>
             <div><strong>5STEP</strong><span>首肩・目・頭・噛みしめ・自律神経を調整</span></div>
             <div><strong>駅前</strong><span>桜並木駅から徒歩1分。土曜午前も対応</span></div>
           </div>
@@ -851,32 +848,13 @@
     </section>
 
     <section class="problem" style="padding: 0; background: #fff;">
-      <img src="symptoms-new.png" alt="30〜50代女性に選ばれています" style="width: 100%; height: auto; display: block;" />
+      <video src="problem-new.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;height:auto;display:block;"></video>
     </section>
 
     <section class="features" style="padding: 0; background: #fff;">
-      <img src="features-new.png" alt="当院の施術の特徴" style="width: 100%; height: auto; display: block;" />
+      <video src="features-new.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;height:auto;display:block;"></video>
     </section>
 
-    <section class="section answer">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="eyebrow">原因は目だけではない</span>
-          <h2>脳疲労は「頭・目・首肩・自律神経」の連動で考える</h2>
-          <p>目だけを揉む、肩だけをほぐす。その場しのぎで戻る方ほど、緊張の連鎖をまとめて整える必要があります。</p>
-        </div>
-        <div class="answer-card">
-          <article class="large-card">
-            <h3>深層筋までゆるめて、負担の入口を下げる</h3>
-            <p>長時間の前傾姿勢で固まりやすい首肩の深層部へアプローチ。頭部への血流や姿勢負担を考慮しながら、目まわりの負担を軽くする土台を作ります。</p>
-          </article>
-          <article class="large-card">
-            <h3>自律神経まで含めて、休める状態へ導く</h3>
-            <p>仕事・育児・睡眠不足で高ぶりやすい神経系にも着目。微弱電流や手技を組み合わせ、リラックスしやすい状態を目指します。</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <section class="section flow">
       <div class="wrap">
@@ -903,7 +881,7 @@
             <div class="step-body"><div class="step-num">STEP 04</div><h3>食いしばり・顎まわり</h3><p>無意識の噛みしめで硬くなりやすい顔まわりを確認し、緊張の抜け道を作ります。</p></div>
           </article>
           <article class="step">
-            <div class="step-media"><img src="⑤自律神経１.jpeg" alt="自律神経ケアの施術イメージ"></div>
+            <div class="step-media"><video src="step05-new.mp4" autoplay muted loop playsinline preload="metadata"></video></div>
             <div class="step-body"><div class="step-num">STEP 05</div><h3>自律神経ケア</h3><p>微弱電流などを活用し、身体が休息モードへ入りやすい状態を目指します。</p></div>
           </article>
           <article class="step">
@@ -953,9 +931,9 @@
           <p style="margin-top: 18px; color: rgba(255,255,255,0.82);">カウンセリング・検査・施術を含めて約90分。状態を見ながら、必要なケアと今後の方針をお伝えします。</p>
         </div>
         <div class="price-card">
-          <div class="normal">通常 16,000円</div>
-          <div class="price">8,000円</div>
-          <div class="sub">初回限定 50%OFF</div>
+          <div class="normal">1回 13,000円</div>
+          <div class="price">初回 8,000円</div>
+          <div class="sub">1日3名限定</div>
           <a class="btn btn-line" href="https://lin.ee/uqCRkRL" target="_blank" rel="noopener" style="width:100%; margin-top:18px;">LINEで予約する</a>
           <p class="notice" style="margin-top: 12px;">予約枠には限りがあります。</p>
         </div>
@@ -970,7 +948,14 @@
           <p>初めての方が気になりやすいことをまとめました。</p>
         </div>
         <div class="faq-list">
-          <details open><summary>初めてでも予約できますか？</summary><p>はい、初めての方もご予約いただけます。公式LINEから希望日時と気になる症状を送ってください。</p></details>
+          <details open><summary>整体は初めてですが大丈夫ですか？</summary><p>はい、大丈夫です。<br>当院は強く押したりボキボキ鳴らす施術ではありません。<br>お身体の状態を確認しながら無理なく施術を行います。</p></details>
+          <details><summary>1回で良くなりますか？</summary><p>1回で変化を感じる方は多いですが、長年続いた不調は1回で全て解決するものではありません。<br>根本改善を目指すためには継続的なケアが大切です。</p></details>
+          <details><summary>どのような方が来院されていますか？</summary><p>30〜50代の女性を中心に<br>・頭痛<br>・眼精疲労<br>・首肩こり<br>・睡眠の質の低下<br>・自律神経の乱れ<br>でお悩みの方が多く来院されています。</p></details>
+          <details><summary>本当に自律神経に効果がありますか？</summary><p>自律神経そのものを治療するわけではありません。<br>首・肩・頭部・呼吸など身体の緊張を整え、自律神経が働きやすい状態を目指します。</p></details>
+          <details><summary>どんな人におすすめですか？</summary><p>✔ 本気で身体を改善したい方<br>✔ 健康のために時間を確保できる方<br>✔ その場しのぎではなく根本改善を目指したい方<br>におすすめしています。</p></details>
+          <details><summary>逆におすすめできない人はいますか？</summary><p>・1回ですべて治したい方<br>・強いマッサージだけを求める方<br>・その場の気持ちよさだけを求める方<br>・予約のお約束を守れない方<br>にはおすすめしておりません。</p></details>
+          <details><summary>予約はどうしたらいいですか？</summary><p>LINE予約がおすすめです。<br>施術中は電話に出られないことがあるため、24時間受付可能なLINEをご利用ください。</p></details>
+          <details><summary>初めてでも予約できますか？</summary><p>はい、初めての方もご予約いただけます。公式LINEから希望日時と気になる症状を送ってください。</p></details>
           <details><summary>強い刺激が苦手でも受けられますか？</summary><p>状態を確認しながら刺激量を調整します。痛みを我慢する施術ではなく、無理のない範囲で進めます。</p></details>
           <details><summary>どのくらい時間がかかりますか？</summary><p>初回はカウンセリングと検査を含めて約90分を目安にしてください。</p></details>
           <details><summary>眼精疲労以外も相談できますか？</summary><p>首肩こり、頭の重さ、睡眠の浅さ、食いしばりなど、関連する不調も合わせて確認します。</p></details>
