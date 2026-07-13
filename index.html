@@ -869,6 +869,37 @@
     }
 
   </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '752934397862087');
+    fbq('track', 'PageView');
+
+    // LINEボタンタップでLeadイベントを送信（このLPを識別できるラベル付き）
+    function fbqLineLead() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', { content_name: '脳疲労リセットVIP', content_category: 'LINE予約' });
+      }
+      return true;
+    }
+    function fbqTelLead() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', { content_name: '脳疲労リセットVIP', content_category: '電話予約' });
+      }
+      return true;
+    }
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=752934397862087&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
   <main>
@@ -929,7 +960,7 @@
         <div class="price-card">
           <div class="normal">1回 13,000円</div>
           <div class="price">初回 8,000円</div>
-          <a class="btn btn-line" href="https://lin.ee/uqCRkRL" target="_blank" rel="noopener" style="width:100%; margin-top:18px;">LINEで予約する</a>
+          <a class="btn btn-line" href="https://lin.ee/uqCRkRL" target="_blank" rel="noopener" onclick="fbqLineLead()" style="width:100%; margin-top:18px;">LINEで予約する</a>
         </div>
       </div>
     </section>
@@ -991,7 +1022,7 @@
           <div class="sns">
             <a href="https://sakuranamiki1.com/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:8px;background:#1a2a3a;color:#fff;text-decoration:none;font-size:0.82rem;font-weight:600;letter-spacing:0.05em;">公式サイト</a>
             <a href="https://www.instagram.com/uevo.sakura/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:8px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;text-decoration:none;font-size:0.82rem;font-weight:600;letter-spacing:0.05em;">Instagram</a>
-            <a href="https://lin.ee/uqCRkRL" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:8px;background:#06c755;color:#fff;text-decoration:none;font-size:0.82rem;font-weight:600;letter-spacing:0.05em;">公式LINE</a>
+            <a href="https://lin.ee/uqCRkRL" target="_blank" rel="noopener" onclick="fbqLineLead()" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:8px;background:#06c755;color:#fff;text-decoration:none;font-size:0.82rem;font-weight:600;letter-spacing:0.05em;">公式LINE</a>
             <a href="https://www.tiktok.com/@bubuniversity" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:8px;background:#010101;color:#fff;text-decoration:none;font-size:0.82rem;font-weight:600;letter-spacing:0.05em;">TikTok</a>
           </div>
         </div>
@@ -1003,8 +1034,8 @@
     <a href="https://maps.app.goo.gl/dzAVf3ezrYE1hnYQA" target="_blank" rel="noopener">Googleマップ</a>
   </div>
   <div class="fixed-cta">
-    <a class="btn btn-tel" href="tel:07055306656">電話で予約</a>
-    <a class="btn btn-line" href="https://lin.ee/uqCRkRL" target="_blank" rel="noopener">LINEで予約</a>
+    <a class="btn btn-tel" href="tel:07055306656" onclick="fbqTelLead()">電話で予約</a>
+    <a class="btn btn-line" href="https://lin.ee/uqCRkRL" target="_blank" rel="noopener" onclick="fbqLineLead()">LINEで予約</a>
   </div>
 
   <footer>
